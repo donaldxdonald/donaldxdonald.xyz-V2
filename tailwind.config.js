@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const plugin = require("tailwindcss/plugin");
+const plugin = require("tailwindcss/plugin")
 
 module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["var(--font-sf)", "system-ui", "sans-serif"],
+        display: ["var(--font-jost)", "system-ui", "sans-serif"],
         default: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       animation: {
@@ -64,8 +64,8 @@ module.exports = {
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
     plugin(({ addVariant }) => {
-      addVariant("radix-side-top", '&[data-side="top"]');
-      addVariant("radix-side-bottom", '&[data-side="bottom"]');
+      addVariant("radix-side-top", '&[data-side="top"]')
+      addVariant("radix-side-bottom", '&[data-side="bottom"]')
     }),
   ],
-};
+}

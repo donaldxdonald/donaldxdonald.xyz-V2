@@ -6,17 +6,17 @@ const nextConfig = {
   },
   swcMinify: true,
   images: {
-    domains: ["lh3.googleusercontent.com", "vercel.com"],
+    domains: ["cdn.donaldxdonald.xyz"],
   },
   async redirects() {
     return [
       {
         source: "/github",
-        destination: "https://github.com/steven-tey/precedent",
+        destination: "https://github.com/donaldxdonald",
         permanent: false,
       },
-    ];
+    ]
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
