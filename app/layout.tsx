@@ -1,6 +1,6 @@
 import { Analytics } from "@vercel/analytics/react"
 import cx from "classnames"
-import { inter, jost } from "./fonts"
+import { inter, jost, notoSans } from "./fonts"
 import "./globals.css"
 
 export const metadata = {
@@ -25,9 +25,8 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cx(inter.variable, jost.variable)}>
-        <div className="fixed h-screen w-full bg-purple-50 dark:bg-purple-950" />
-        <main className="flex min-h-screen w-full flex-col items-center justify-center py-32 text-slate-800 dark:text-slate-300">
+      <body className={cx(jost.variable, inter.variable, notoSans.variable)}>
+        <main className="flex min-h-screen w-full mx-auto justify-center max-w-6xl text-slate-800 dark:text-slate-300">
           {children}
         </main>
         <Analytics />
