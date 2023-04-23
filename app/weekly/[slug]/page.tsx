@@ -1,25 +1,50 @@
 import { allWeeklies } from 'contentlayer/generated'
-import { useMDXComponent } from 'next-contentlayer/hooks'
-import { notFound } from 'next/navigation'
-import Balancer from 'react-wrap-balancer'
+import { Metadata } from 'next'
+import Post from '../../../components/layout/post'
 
-export default function Post({ params }: {params: {slug: string}}) {
+export async function generateMetadata({
+  params,
+}: {params: {slug: string}}): Promise<Metadata | undefined> {
   const post = allWeeklies.find(v => v.slug === params.slug)
-
   if (!post) {
-    notFound()
+    return
   }
 
-  const MDX = useMDXComponent(post.body.code)
+  const {
+    title,
+    description,
+    image,
+    slug,
+  } = post
+  const ogImage = image || `https://donaldxdonald.xyz/api/og?title=${title}`
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      url: `https://donaldxdonald.xyz/weekly/${slug}`,
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
+  }
+}
+
+export default function PostPage({ params }: {params: {slug: string}}) {
+  const post = allWeeklies.find(v => v.slug === params.slug)
 
   return (
-    <section className='flex flex-col gap-4 mt-16 mb-56 w-1/2 font-display'>
-      <h1 className="font-bold text-3xl font-serif max-w-[650px]">
-        <Balancer>{post.title}</Balancer>
-      </h1>
-      <article className='prose'>
-        <MDX ></MDX>
-      </article>
-    </section>
+    <Post post={post}></Post>
   )
 }
