@@ -18,7 +18,7 @@ export async function generateMetadata({
     date,
     slug,
   } = post
-  const ogImage = image || `https://donaldxdonald.xyz/api/og?title=${title}&date=${dayjs(date).format('YYYY-MM-DD')}`
+  const ogImage = image || `https://donaldxdonald.xyz/og-image?title=${title}&date=${dayjs(date).format('YYYY-MM-DD')}`
 
   return {
     title,
