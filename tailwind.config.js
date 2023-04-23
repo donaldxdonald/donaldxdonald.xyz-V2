@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        serif: ["var(--font-serif)", "system-ui", "sans-serif"],
         display: ["var(--font-jost)", "var(--font-sans)", "system-ui", "sans-serif"],
         default: ["var(--font-sans)", "system-ui", "sans-serif"],
       },

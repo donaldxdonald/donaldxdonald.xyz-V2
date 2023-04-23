@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"contentlayer dev\" \"next dev\"",
     "build": "next build",
     "format": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "start": "next start",
@@ -29,6 +29,7 @@
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.4",
     "react-wrap-balancer": "^0.4.0",
+    "remark-gfm": "^3.0.1",
     "typescript": "5.0.4",
     "use-debounce": "^9.0.3"
   },

@@ -8,7 +8,7 @@ export default function PostList({ list }: {list: DocumentTypes[]}) {
   })
 
   return (
-    <section className="flex flex-col gap-4 mt-16 mb-56 w-1/2 font-display">
+    <section className="flex flex-col gap-4 mt-16 mb-56 w-3/4 font-display tracking-tighter">
       {
         sortedList.map((item, i) => (
           <Link

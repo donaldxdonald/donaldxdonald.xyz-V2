@@ -1,4 +1,5 @@
 import { ComputedFields, FieldDefs, defineDocumentType, makeSource } from 'contentlayer/source-files'
+import remarkGfm from 'remark-gfm'
 
 const postFields: FieldDefs = {
   title: {
@@ -47,4 +48,7 @@ const Weekly = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Post, Weekly],
+  mdx: {
+    remarkPlugins: [remarkGfm],
+  },
 })
