@@ -1,4 +1,5 @@
 import { allWeeklies } from 'contentlayer/generated'
+import dayjs from 'dayjs'
 import { Metadata } from 'next'
 import Post from '../../../components/layout/post'
 
@@ -14,9 +15,10 @@ export async function generateMetadata({
     title,
     description,
     image,
+    date,
     slug,
   } = post
-  const ogImage = image || `https://donaldxdonald.xyz/api/og?title=${title}`
+  const ogImage = image || `https://donaldxdonald.xyz/api/og?title=${title}&date=${dayjs(date).format('YYYY-MM-DD')}`
 
   return {
     title,
