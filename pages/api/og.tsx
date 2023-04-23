@@ -1,10 +1,11 @@
-import { ImageResponse, NextRequest } from "next/server"
+import { ImageResponse } from '@vercel/og'
+import { NextRequest } from "next/server"
 
 export const config = {
   runtime: 'edge',
 }
 
-export default async function OG(req: NextRequest) {
+export default async function handler(req: NextRequest) {
   const { searchParams } = req.nextUrl
   const postTitle = searchParams.get('title')
   const postDate = searchParams.get('date')
