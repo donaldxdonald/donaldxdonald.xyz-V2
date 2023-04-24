@@ -5,7 +5,7 @@ export const config = {
   runtime: 'edge',
 }
 
-export default async function handler(req: NextRequest) {
+export default function handler(req: NextRequest) {
   const { searchParams } = req.nextUrl
   const postTitle = searchParams.get('title')
   const postDate = searchParams.get('date')
