@@ -35,15 +35,17 @@ export default function handler(req: NextRequest) {
           }}
         >DonaldxDonald</span>
         {
-          postDate && <span
-            style={{
-              position: 'absolute',
-              right: '1.5rem',
-              top: '1.5rem',
-              letterSpacing: '-0.05em',
-              fontSize: '1.2rem',
-            }}
-          >{postDate}</span>
+          postDate && (
+            <span
+              style={{
+                position: 'absolute',
+                right: '1.5rem',
+                top: '1.5rem',
+                letterSpacing: '-0.05em',
+                fontSize: '1.2rem',
+              }}
+            >{postDate}</span>
+          )
         }
         <h1
           style={{

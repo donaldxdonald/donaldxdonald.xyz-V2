@@ -12,7 +12,7 @@ export default function Post({ post }: {post: DocumentTypes | undefined}) {
   const MDX = useMDXComponent(post.body.code)
 
   return (
-    <section className='flex flex-col mt-16 mb-56'>
+    <section className='flex flex-col mt-16 mb-56 w-[90%]'>
       <h1 className="font-bold text-3xl font-serif tracking-tighter mt-5">
         <Balancer>{post.title}</Balancer>
       </h1>

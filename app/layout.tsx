@@ -1,18 +1,23 @@
 import { Analytics } from "@vercel/analytics/react"
 import cx from "classnames"
+import { Metadata } from "next"
 import { inter, jost, notoSans, notoSerif } from "./fonts"
 import "./globals.css"
 
-export const metadata = {
-  title: "DonaldxDonald",
-  description:
-    "Donald Mok's digital garden",
+const metaTitle = "DonaldxDonald"
+const metaDesc = "Donald Mok's digital garden"
+export const metadata: Metadata = {
+  title: metaTitle,
+  description: metaDesc,
   twitter: {
     card: "summary_large_image",
-    title: "DonaldxDonald",
-    description:
-      "Donald Mok's digital garden",
+    title: metaTitle,
+    description: metaDesc,
     creator: "@donaldxdonald",
+  },
+  openGraph: {
+    title: metaTitle,
+    description: metaDesc,
   },
   metadataBase: new URL("https://donaldxdonald.xyz"),
   themeColor: "#faf5ff",
