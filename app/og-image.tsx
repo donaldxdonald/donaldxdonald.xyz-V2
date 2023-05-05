@@ -5,10 +5,17 @@ export const config = {
   runtime: 'edge',
 }
 
-export default function handler(req: NextRequest) {
+export default async function OG(req: NextRequest) {
   const { searchParams } = req.nextUrl
   const postTitle = searchParams.get('title')
   const postDate = searchParams.get('date')
+
+  const fontJost = await fetch(
+    new URL(
+      '../node_modules/@fontsource/jost/files/jost-latin-300-normal.woff',
+      import.meta.url,
+    ),
+  ).then(res => res.arrayBuffer())
 
   return new ImageResponse(
     (
@@ -61,6 +68,12 @@ export default function handler(req: NextRequest) {
     {
       width: 1200,
       height: 630,
+      fonts: [
+        {
+          name: 'Jost',
+          data: fontJost,
+        },
+      ],
     },
   )
 }
