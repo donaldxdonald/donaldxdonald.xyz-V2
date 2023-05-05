@@ -10,7 +10,7 @@ export default async function GET(req: NextRequest) {
 
   const fontJost = await fetch(
     new URL(
-      '../node_modules/@fontsource/jost/files/jost-latin-300-normal.woff',
+      '../../../node_modules/@fontsource/jost/files/jost-latin-300-normal.woff',
       import.meta.url,
     ),
   ).then(res => res.arrayBuffer())
@@ -27,7 +27,7 @@ export default async function GET(req: NextRequest) {
           justifyContent: "center",
           fontFamily: 'Jost',
           backgroundColor: '#e9d5ff',
-          backgroundImage: new URL("../../public/noise.png", import.meta.url).toString(),
+          backgroundImage: new URL("../../../public/noise.png", import.meta.url).toString(),
         }}
       >
         <span
