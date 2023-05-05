@@ -5,7 +5,7 @@ export const config = {
   runtime: 'edge',
 }
 
-export default async function OG(req: NextRequest) {
+export default async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl
   const postTitle = searchParams.get('title')
   const postDate = searchParams.get('date')
