@@ -3,14 +3,14 @@ import { NextRequest } from "next/server"
 
 export const runtime = "edge"
 
-export default async function GET(req: NextRequest) {
+export default async function OG(req: NextRequest) {
   const { searchParams } = req.nextUrl
   const postTitle = searchParams.get('title')
   const postDate = searchParams.get('date')
 
   const fontJost = await fetch(
     new URL(
-      '../../../node_modules/@fontsource/jost/files/jost-latin-300-normal.woff',
+      '../node_modules/@fontsource/jost/files/jost-latin-300-normal.woff',
       import.meta.url,
     ),
   ).then(res => res.arrayBuffer())
@@ -27,7 +27,7 @@ export default async function GET(req: NextRequest) {
           justifyContent: "center",
           fontFamily: 'Jost',
           backgroundColor: '#e9d5ff',
-          backgroundImage: new URL("../../../public/noise.png", import.meta.url).toString(),
+          backgroundImage: new URL("../public/noise.png", import.meta.url).toString(),
         }}
       >
         <span
