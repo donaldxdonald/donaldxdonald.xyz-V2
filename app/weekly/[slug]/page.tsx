@@ -1,5 +1,4 @@
 import { allWeeklies } from 'contentlayer/generated'
-import dayjs from 'dayjs'
 import { Metadata } from 'next'
 import Post from '../../../components/layout/post'
 
@@ -15,10 +14,10 @@ export async function generateMetadata({
     title,
     description,
     image,
-    date,
     slug,
   } = post
-  const ogImage = image || `https://donaldxdonald.xyz/opengraph-image?title=${title}&date=${dayjs(date).format('YYYY-MM-DD')}`
+  const url = `https://donaldxdonald.xyz/weekly/${slug}`
+  const ogImage = image || `${url}/opengraph-image?${Date.now()}`
 
   return {
     title,
@@ -27,7 +26,7 @@ export async function generateMetadata({
       title,
       description,
       type: 'article',
-      url: `https://donaldxdonald.xyz/weekly/${slug}`,
+      url,
       images: [
         {
           url: ogImage,
