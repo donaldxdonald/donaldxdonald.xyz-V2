@@ -1,4 +1,3 @@
-import { allWeeklies } from "contentlayer/generated"
 import { ImageResponse } from "next/server"
 
 export const runtime = "edge"
@@ -11,11 +10,6 @@ export default async function og({ params }: {params: {slug: string}}) {
     ),
   ).then(res => res.arrayBuffer())
 
-  const post = allWeeklies.find(v => v.slug === params.slug)
-  const {
-    title = 'Cannot find post',
-  } = post || {}
-
   return new ImageResponse(
     (
       <div
@@ -27,7 +21,7 @@ export default async function og({ params }: {params: {slug: string}}) {
       >
         <span tw="absolute left-10 top-10 text-4xl">DonaldxDonald</span>
         <span tw="absolute right-10 top-10 text-4xl">Weekly</span>
-        <h1 tw="text-7xl tracking-tighter mx-5">{title}</h1>
+        <h1 tw="text-7xl tracking-tighter mx-5">{slug}</h1>
       </div>
     ),
     {
