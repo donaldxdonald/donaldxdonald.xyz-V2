@@ -2,7 +2,7 @@ import { ImageResponse } from "next/server"
 
 export const runtime = "edge"
 
-export default async function og(_req: Request, { params }: {params: {slug: string}}) {
+export default async function og({ params }: {params: {slug: string}}) {
   const fontJost = await fetch(
     new URL(
       '../../../node_modules/@fontsource/jost/files/jost-latin-400-normal.woff',
@@ -21,7 +21,7 @@ export default async function og(_req: Request, { params }: {params: {slug: stri
       >
         <span tw="absolute left-10 top-10 text-4xl">DonaldxDonald</span>
         <span tw="absolute right-10 top-10 text-4xl">Blog</span>
-        <h1 tw="text-7xl tracking-tighter mx-5">{slug}</h1>
+        <h1 tw="text-7xl tracking-tighter mx-5">{params.slug}</h1>
       </div>
     ),
     {
