@@ -1,12 +1,8 @@
-import { ImageResponse, NextRequest } from "next/server"
+import { ImageResponse } from "next/server"
 
 export const runtime = "edge"
 
-export default async function OG(req: NextRequest) {
-  const { searchParams } = req.nextUrl
-  const postTitle = searchParams.get('title')
-  const postDate = searchParams.get('date')
-
+export default async function og() {
   const fontJost = await fetch(
     new URL(
       '../node_modules/@fontsource/jost/files/jost-latin-300-normal.woff',
@@ -17,50 +13,16 @@ export default async function OG(req: NextRequest) {
   return new ImageResponse(
     (
       <div
+        tw="relative w-full h-full bg-white flex items-center justify-center bg-purple-200"
         style={{
-          height: "100%",
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
           fontFamily: 'Jost',
-          backgroundColor: '#e9d5ff',
-          backgroundImage: new URL("../public/noise.png", import.meta.url).toString(),
+          backgroundImage: new URL('../public/noise.png', import.meta.url).toString(),
         }}
       >
-        <span
-          style={{
-            position: 'absolute',
-            left: '1.5rem',
-            top: '1.5rem',
-            letterSpacing: '-0.05em',
-            fontSize: '1.2rem',
-          }}
-        >DonaldxDonald</span>
-        {
-          postDate && (
-            <span
-              style={{
-                position: 'absolute',
-                right: '1.5rem',
-                top: '1.5rem',
-                letterSpacing: '-0.05em',
-                fontSize: '1.2rem',
-              }}
-            >{postDate}</span>
-          )
-        }
-        <h1
-          style={{
-            fontSize: "3rem",
-            whiteSpace: 'normal',
-            margin: '1em',
-          }}
-        >
-          { postTitle || '' }
-        </h1>
+        <span tw="absolute right-10 top-10 text-2xl text-slate-800">blog / weekly</span>
+        <h1 tw="text-6xl tracking-tighter text-slate-800">DonaldxDonald</h1>
       </div>
+
     ),
     {
       width: 1200,
