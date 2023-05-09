@@ -16,7 +16,7 @@ export default async function og() {
         tw="relative w-full h-full bg-white flex items-center justify-center bg-purple-200"
         style={{
           fontFamily: 'Jost',
-          backgroundImage: new URL('../public/noise.png', import.meta.url).toString(),
+          backgroundImage: `url("${new URL('../public/noise.png', import.meta.url).toString()}")`,
         }}
       >
         <span tw="absolute right-10 top-10 text-2xl text-slate-800">blog / weekly</span>
