@@ -5,7 +5,7 @@ export const runtime = "edge"
 export default async function og() {
   const fontJost = await fetch(
     new URL(
-      '../node_modules/@fontsource/jost/files/jost-latin-300-normal.woff',
+      '../node_modules/@fontsource/jost/files/jost-latin-500-normal.woff',
       import.meta.url,
     ),
   ).then(res => res.arrayBuffer())
@@ -13,14 +13,14 @@ export default async function og() {
   return new ImageResponse(
     (
       <div
-        tw="relative w-full h-full bg-white flex items-center justify-center bg-purple-200"
+        tw="relative w-full h-full bg-white flex items-center justify-center bg-purple-200 text-slate-800"
         style={{
           fontFamily: 'Jost',
           backgroundImage: `url("${new URL('../public/noise.png', import.meta.url).toString()}")`,
         }}
       >
-        <span tw="absolute right-10 top-10 text-2xl text-slate-800">blog / weekly</span>
-        <h1 tw="text-6xl tracking-tighter text-slate-800">DonaldxDonald</h1>
+        <span tw="absolute right-10 top-10 text-4xl">blog / weekly</span>
+        <h1 tw="text-8xl tracking-tighter">DonaldxDonald</h1>
       </div>
 
     ),
