@@ -12,7 +12,7 @@ export default function PostOG({ title, type, date }: CompProps) {
       tw="relative w-full h-full bg-white flex items-center justify-center bg-purple-200 text-slate-800"
       style={{
         fontFamily: 'Jost',
-        backgroundImage: `url("${new URL('../../../public/noise.png', import.meta.url).toString()}")`,
+        backgroundImage: `url("${new URL('../../public/noise.png', import.meta.url).toString()}")`,
       }}
     >
       <span tw="absolute left-10 top-10 text-4xl">Donaldx{type.toUpperCase()}</span>
