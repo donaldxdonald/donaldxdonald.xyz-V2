@@ -5,7 +5,7 @@ export const runtime = "edge"
 export default async function og() {
   const fontJost = await fetch(
     new URL(
-      '../node_modules/@fontsource/jost/files/jost-latin-500-normal.woff',
+      '../node_modules/@fontsource/jost/files/jost-latin-400-normal.woff',
       import.meta.url,
     ),
   ).then(res => res.arrayBuffer())
@@ -20,7 +20,7 @@ export default async function og() {
         }}
       >
         <span tw="absolute right-10 top-10 text-4xl">blog / weekly</span>
-        <h1 tw="text-8xl tracking-tighter">DonaldxDonald</h1>
+        <h1 tw="text-8xl tracking-[-0.7rem]">DonaldxDonald</h1>
       </div>
 
     ),
