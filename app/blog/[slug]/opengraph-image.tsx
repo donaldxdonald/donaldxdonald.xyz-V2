@@ -1,6 +1,6 @@
 import { allPosts } from "contentlayer/generated"
+import dayjs from "dayjs"
 import { ImageResponse } from "next/server"
-import PostOG from "../../../components/shared/post-og"
 
 export const runtime = "edge"
 
@@ -20,7 +20,17 @@ export default async function og({ params }: {params: {slug: string}}) {
 
   return new ImageResponse(
     (
-      <PostOG title={title} date={date} type="Blog"></PostOG>
+      <div
+        tw="relative w-full h-full bg-white flex items-center justify-center bg-purple-200 text-slate-800"
+        style={{
+          fontFamily: 'Jost',
+          backgroundImage: `url("${new URL('../../../public/noise.png', import.meta.url).toString()}")`,
+        }}
+      >
+        <span tw="absolute left-10 top-10 text-4xl">DonaldxBlog</span>
+        <span tw="absolute right-10 top-10 text-4xl">{dayjs(date).format('YYYY-MM-DD')}</span>
+        <h1 tw="text-7xl tracking-tighter mx-5">{title}</h1>
+      </div>
     ),
     {
       width: 1200,
