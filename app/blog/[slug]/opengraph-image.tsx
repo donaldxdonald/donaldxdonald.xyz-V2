@@ -1,5 +1,4 @@
 import { allPosts } from "contentlayer/generated"
-import dayjs from "dayjs"
 import { ImageResponse } from "next/server"
 
 export const runtime = "edge"
@@ -15,7 +14,6 @@ export default async function og({ params }: {params: {slug: string}}) {
   const post = allPosts.find(v => v.slug === params.slug)
   const {
     title = 'Cannot find post',
-    date = Date.now().toString(),
   } = post || {}
 
   return new ImageResponse(
@@ -27,8 +25,8 @@ export default async function og({ params }: {params: {slug: string}}) {
           backgroundImage: `url("${new URL('../../../public/noise.png', import.meta.url).toString()}")`,
         }}
       >
-        <span tw="absolute left-10 top-10 text-4xl">DonaldxBlog</span>
-        <span tw="absolute right-10 top-10 text-4xl">{dayjs(date).format('YYYY-MM-DD')}</span>
+        <span tw="absolute left-10 top-10 text-4xl">DonaldxDonald</span>
+        <span tw="absolute right-10 top-10 text-4xl">Blog</span>
         <h1 tw="text-7xl tracking-tighter mx-5">{title}</h1>
       </div>
     ),
