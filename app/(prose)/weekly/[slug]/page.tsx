@@ -1,6 +1,6 @@
+import Post from '@/components/layout/post'
 import { allWeeklies } from 'contentlayer/generated'
 import { Metadata } from 'next'
-import Post from '../../../components/layout/post'
 
 export async function generateMetadata({
   params,
