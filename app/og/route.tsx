@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
       <div
         tw="relative w-full h-full bg-white flex items-center justify-center bg-purple-200 text-slate-800"
         style={{
-          fontFamily: 'Jost',
+          fontFamily: 'Jost, system-ui, sans-serif',
           backgroundImage: `url("${new URL('../../public/noise.png', import.meta.url).toString()}")`,
         }}
       >
