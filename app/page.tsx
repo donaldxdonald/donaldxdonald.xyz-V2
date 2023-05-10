@@ -1,21 +1,7 @@
-import { Github, Mail } from "lucide-react"
 import Link from "next/link"
 import { Fragment } from "react"
 import Balancer from "react-wrap-balancer"
-import { MONOLOGUE } from "../lib/constants"
-
-const buttons = [
-  {
-    icon: Github,
-    text: '@donaldxdonald',
-    link: 'https://github.com/donaldxdonald',
-  },
-  {
-    icon: Mail,
-    text: 'donaldxdonald@duck.com',
-    link: 'mailto:donaldxdonald@duck.com',
-  },
-]
+import { MONOLOGUE, SocialLinks } from "../lib/constants"
 
 const wordMap: Record<number, {route: string}> = {
   21: {
@@ -49,7 +35,7 @@ export default async function Home() {
         </Balancer>
       </p>
       {
-        buttons.map((item, index) => (
+        SocialLinks.map((item, index) => (
           <a
             key={item.link}
             href={item.link}
