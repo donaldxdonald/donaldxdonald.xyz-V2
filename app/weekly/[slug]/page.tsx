@@ -14,10 +14,11 @@ export async function generateMetadata({
     title,
     description,
     image,
+    date,
     slug,
   } = post
   const url = `https://donaldxdonald.xyz/weekly/${slug}`
-  const ogImage = image || `${url}/opengraph-image?${Date.now()}`
+  const ogImage = image || `https://donaldxdonald.xyz/og?title=${title}date=${date}`
 
   return {
     title,
