@@ -4,6 +4,9 @@ dependencies:
   '@fontsource/jost':
     specifier: ^4.5.13
     version: 4.5.13
+  '@fontsource/noto-sans-sc':
+    specifier: ^4.5.12
+    version: 4.5.12
   '@iconify/icons-mdi':
     specifier: ^1.2.44
     version: 1.2.44
@@ -862,6 +865,10 @@ packages:
 
   /@fontsource/jost@4.5.13:
     resolution: {integrity: sha512-StvM74Eny5ZkioanZ3JV6RgjTfMnB7mGde1SVoJGUrudxGPCp6kRXRm4CgwgJYarDzLt+jSPESLufHhRVemjrA==}
+    dev: false
+
+  /@fontsource/noto-sans-sc@4.5.12:
+    resolution: {integrity: sha512-KQ8Bn8KCGVS6RKrEw7fp65GJYpKyKEJ/TkePoKGxvNy7smSaHoKV7vrmpIiA46hkqQyYdENix/NKSprxs4Soyw==}
     dev: false
 
   /@grpc/grpc-js@1.8.14:

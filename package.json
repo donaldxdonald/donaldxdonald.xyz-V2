@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fontsource/jost": "^4.5.13",
+    "@fontsource/noto-sans-sc": "^4.5.12",
     "@iconify/icons-mdi": "^1.2.44",
     "@radix-ui/react-popover": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.2",
