@@ -16,7 +16,7 @@ export default function Post({ post }: {post: DocumentTypes | undefined}) {
       <h1 className="font-bold text-3xl font-serif tracking-tighter mt-5">
         <Balancer>{post.title}</Balancer>
       </h1>
-      <span className='text-md text-gray-400 my-3 py-2 border-t border-purple-900 w-fit'>{dayjs(post.date).format('YYYY-MM-DD hh:mm')}</span>
+      <span className='text-md text-gray-400 my-3 py-2 border-t border-purple-900 w-fit font-mono'>{dayjs(post.date).format('YYYY-MM-DD hh:mm')}</span>
       <article className='prose prose-slate max-w-3xl font-display mt-5'>
         <MDX></MDX>
       </article>

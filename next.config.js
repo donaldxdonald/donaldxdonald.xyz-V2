@@ -14,6 +14,11 @@ const nextConfig = {
         destination: "https://github.com/donaldxdonald",
         permanent: false,
       },
+      {
+        source: "/twitter",
+        destination: "https://twitter.com/donaldxdonald",
+        permanent: false,
+      },
     ]
   },
 }

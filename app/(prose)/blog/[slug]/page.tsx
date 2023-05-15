@@ -1,6 +1,6 @@
+import Post from '@/components/layout/post'
 import { allPosts } from 'contentlayer/generated'
 import { Metadata } from 'next'
-import Post from '../../../components/layout/post'
 
 export async function generateMetadata({
   params,
@@ -14,10 +14,11 @@ export async function generateMetadata({
     title,
     description,
     image,
+    date,
     slug,
   } = post
   const url = `https://donaldxdonald.xyz/blog/${slug}`
-  const ogImage = image || `${url}/opengraph-image?${Date.now()}`
+  const ogImage = image || `https://donaldxdonald.xyz/og?title=${encodeURIComponent(title)}&date=${date}`
 
   return {
     title,
