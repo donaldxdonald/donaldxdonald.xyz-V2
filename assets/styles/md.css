@@ -1,0 +1,66 @@
+
+code[class*=language-] {
+  @apply font-mono;
+}
+
+.prose img {
+  width: 100%;
+}
+
+.prose h1 {
+  @apply text-3xl font-extrabold text-theme mb-0 mt-5;
+}
+
+.prose h1 strong {
+  font-weight: 900;
+}
+
+.prose h2 {
+  @apply text-xl font-semibold;
+}
+.prose h3 {
+  @apply text-lg font-medium mt-10;
+}
+
+:is(.prose) h1, h2, h3 {
+  @apply relative font-serif;
+}
+
+.prose code::before, .prose code::after {
+  display: none
+}
+
+.prose :is(p, li) > a {
+  @apply border-b-theme border-b-2 hover:opacity-60 font-normal no-underline;
+}
+
+.prose ol li > a {
+  @apply border-dashed border-b-theme border-b-2 no-underline;
+}
+
+
+.prose :is(ol, ul) li {
+  @apply font-normal;
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *)) {
+  font-weight: normal !important;
+  @apply rounded py-1 px-2 bg-gray-200;
+}
+
+.prose .header-anchor {
+  @apply absolute -left-4 top-0 opacity-0;
+}
+
+.prose :is(h1,h2,h3):hover .header-anchor {
+  @apply opacity-50;
+}
+
+.prose blockquote {
+  @apply not-italic font-normal opacity-60;
+}
+
+.prose blockquote p::before,
+.prose blockquote p::after {
+  content: none;
+}

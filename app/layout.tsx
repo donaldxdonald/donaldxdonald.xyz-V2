@@ -30,7 +30,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cx(jost.variable, inter.variable, notoSans.variable, notoSerif.variable)}>
+      <body className={cx(jost.variable, inter.variable, notoSans.variable, notoSerif.variable, 'bg-indigo-50')}>
         <main className="flex min-h-screen w-full mx-auto justify-center max-w-4xl text-slate-800 dark:text-slate-300">
           {children}
         </main>

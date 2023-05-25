@@ -1,4 +1,5 @@
 import { ComputedFields, FieldDefs, defineDocumentType, makeSource } from 'contentlayer/source-files'
+import rehypeHighlight from 'rehype-highlight'
 import remarkGfm from 'remark-gfm'
 
 const postFields: FieldDefs = {
@@ -50,5 +51,6 @@ export default makeSource({
   documentTypes: [Post, Weekly],
   mdx: {
     remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypeHighlight],
   },
 })

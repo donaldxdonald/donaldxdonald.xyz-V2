@@ -1,3 +1,6 @@
+@import url("../assets/styles/hljs.github.css");
+@import url("../assets/styles/md.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

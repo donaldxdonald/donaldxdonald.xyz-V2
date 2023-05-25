@@ -14,7 +14,7 @@ export default function PostList({ list }: {list: DocumentTypes[]}) {
           <Link
             key={item._id}
             href={item.url}
-            className='animate-fade-up opacity-0 tracking-tighter px-5 py-3 flex flex-col text-lg w-full rounded-md text-slate-600 hover:text-purple-800 hover:bg-purple-50'
+            className='animate-fade-up opacity-0 tracking-tighter px-5 py-3 flex flex-col text-lg w-full rounded-md text-slate-600 hover:text-purple-800 hover:bg-purple-100'
             style={{ animationDelay: `${i * 0.1}s`, animationFillMode: 'forwards' }}
           >
             <span>{ item.title }</span>
