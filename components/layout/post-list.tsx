@@ -15,7 +15,7 @@ export default function PostList({ list }: {list: DocumentTypes[]}) {
             key={item._id}
             href={item.url}
             className='animate-fade-up opacity-0 tracking-tighter px-5 py-3 flex flex-col text-lg w-full rounded-md text-slate-600 hover:text-purple-800 hover:bg-purple-100'
-            style={{ animationDelay: `${i * 0.1}s`, animationFillMode: 'forwards' }}
+            style={{ animationDelay: `${i * 0.05}s`, animationFillMode: 'forwards' }}
           >
             <span>{ item.title }</span>
             <hr className='text-purple-900 my-3' />

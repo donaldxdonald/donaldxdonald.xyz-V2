@@ -1,5 +1,7 @@
 import { ComputedFields, FieldDefs, defineDocumentType, makeSource } from 'contentlayer/source-files'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeHighlight from 'rehype-highlight'
+import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
 const postFields: FieldDefs = {
@@ -51,6 +53,16 @@ export default makeSource({
   documentTypes: [Post, Weekly],
   mdx: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypeHighlight],
+    rehypePlugins: [
+      rehypeHighlight,
+      rehypeSlug,
+      [rehypeAutolinkHeadings, {
+        properties: { className: ['header-anchor'], ariaHidden: true, tabIndex: -1 },
+        content: {
+          type: 'text',
+          value: '#',
+        },
+      }],
+    ],
   },
 })

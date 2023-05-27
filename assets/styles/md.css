@@ -49,7 +49,7 @@ code[class*=language-] {
 }
 
 .prose .header-anchor {
-  @apply absolute -left-4 top-0 opacity-0;
+  @apply absolute -left-4 top-0 opacity-0 text-indigo-900 font-bold no-underline;
 }
 
 .prose :is(h1,h2,h3):hover .header-anchor {
