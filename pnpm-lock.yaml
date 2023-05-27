@@ -37,15 +37,6 @@ dependencies:
   framer-motion:
     specifier: ^8.4.2
     version: 8.5.5(react-dom@18.2.0)(react@18.2.0)
-  gray-matter:
-    specifier: ^4.0.3
-    version: 4.0.3
-  hast-util-has-property:
-    specifier: ^2.0.1
-    version: 2.0.1
-  hast-util-heading-rank:
-    specifier: ^2.1.1
-    version: 2.1.1
   lucide-react:
     specifier: 0.216.0
     version: 0.216.0(react@18.2.0)
@@ -109,9 +100,6 @@ dependencies:
   unified:
     specifier: ^10.1.2
     version: 10.1.2
-  unist-util-visit:
-    specifier: ^4.1.2
-    version: 4.1.2
   use-debounce:
     specifier: ^9.0.3
     version: 9.0.4(react@18.2.0)
