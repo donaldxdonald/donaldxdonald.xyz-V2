@@ -1,7 +1,11 @@
 import { ComputedFields, FieldDefs, defineDocumentType, makeSource } from 'contentlayer/source-files'
+import { slug } from 'github-slugger'
+import { toString } from 'mdast-util-to-string'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
+import { remark } from 'remark'
 import remarkGfm from 'remark-gfm'
+import { visit } from 'unist-util-visit'
 import { rehypeStarryNight } from './lib/rehype-starry-night'
 
 const postFields: FieldDefs = {
@@ -29,6 +33,32 @@ const computedFields: ComputedFields = {
   url: {
     type: 'string',
     resolve: doc => doc._raw.flattenedPath,
+  },
+  toc: {
+    type: 'json',
+    resolve: async doc => {
+      const headingList: {depth: number; text: string; slug: string}[] = []
+
+      await remark()
+        .use(remarkGfm)
+        .use(
+          () => tree => {
+            visit(tree, 'heading', node => {
+              if (node.depth <= 2) {
+                const text = toString(node)
+                headingList.push({
+                  depth: node.depth,
+                  text,
+                  slug: slug(text),
+                })
+              }
+            })
+          },
+        )
+        .process(doc.body.raw)
+
+      return headingList
+    },
   },
 }
 
