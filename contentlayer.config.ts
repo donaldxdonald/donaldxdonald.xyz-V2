@@ -1,8 +1,8 @@
 import { ComputedFields, FieldDefs, defineDocumentType, makeSource } from 'contentlayer/source-files'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeHighlight from 'rehype-highlight'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
+import { rehypeStarryNight } from './lib/rehype-starry-night'
 
 const postFields: FieldDefs = {
   title: {
@@ -54,7 +54,7 @@ export default makeSource({
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
-      rehypeHighlight,
+      rehypeStarryNight,
       rehypeSlug,
       [rehypeAutolinkHeadings, {
         properties: { className: ['header-anchor'], ariaHidden: true, tabIndex: -1 },
