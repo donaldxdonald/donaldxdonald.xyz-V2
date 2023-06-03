@@ -1,7 +1,7 @@
 import dayjs from 'dayjs'
 import { useMDXComponent } from 'next-contentlayer/hooks'
-import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import Balancer from 'react-wrap-balancer'
 import { DocumentTypes } from '../../.contentlayer/generated/types'
 
@@ -13,7 +13,7 @@ export default function Post({ post }: {post: DocumentTypes | undefined}) {
   const MDX = useMDXComponent(post.body.code)
 
   return (
-    <section className='flex flex-col mt-16 mb-56 w-[90%]'>
+    <section className='flex flex-col mt-16 mb-56'>
       <h1 className="font-bold text-4xl font-serif tracking-tighter mt-5">
         <Balancer>{post.title}</Balancer>
       </h1>

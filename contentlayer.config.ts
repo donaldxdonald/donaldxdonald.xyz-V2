@@ -80,6 +80,7 @@ const Weekly = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: 'content',
+  contentDirExclude: ['json'],
   documentTypes: [Post, Weekly],
   mdx: {
     remarkPlugins: [remarkGfm],

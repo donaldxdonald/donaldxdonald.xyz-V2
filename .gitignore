@@ -43,3 +43,5 @@ next-env.d.ts
 /public/*.atom
 /public/*.json
 /public/*.xml
+
+content/json

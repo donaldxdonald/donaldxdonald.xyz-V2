@@ -5,7 +5,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["cdn.donaldxdonald.xyz"],
+    domains: [
+      "cdn.donaldxdonald.xyz",
+      "i.scdn.co",
+    ],
   },
   async redirects() {
     return [

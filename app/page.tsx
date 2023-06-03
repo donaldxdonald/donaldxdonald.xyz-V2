@@ -4,6 +4,9 @@ import Balancer from "react-wrap-balancer"
 import { MONOLOGUE, SocialLinks } from "../lib/constants"
 
 const wordMap: Record<number, {route: string}> = {
+  16: {
+    route: '/listening',
+  },
   21: {
     route: '/blog',
   },
