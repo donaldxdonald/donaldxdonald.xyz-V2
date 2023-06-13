@@ -86,3 +86,10 @@ export const slugify = (str: string): string => {
       .toLowerCase()
   )
 }
+
+export function groupBy<T>(arr: T[], predicate: (item: T) => string): Record<string, T[]> {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  // eslint-disable-next-line no-sequences
+  return arr.reduce((r, v, i, a, k = predicate(v)) => ((r[k] || (r[k] = [])).push(v), r), {})
+}

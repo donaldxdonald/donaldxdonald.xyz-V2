@@ -49,7 +49,7 @@ export default function PostPage({ params }: {params: {slug: string}}) {
   return (
     <>
       <Post post={post}></Post>
-      <div className='h-screen hidden fixed top-0 right-[17%] translate-x-full xl:right-1/2 xl:translate-x-[34rem] md:flex flex-col items-center px-2 py-28'>
+      <div className='h-screen hidden fixed top-0 left-1/2 translate-x-full lg:translate-x-[26rem] 2xl:translate-x-[32rem] lg:flex flex-col items-center px-2 py-28'>
         <TOC tableOfContents={post?.toc || []} hrefPrefix={`/blog/${params.slug}`}></TOC>
       </div>
     </>
