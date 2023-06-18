@@ -10,7 +10,7 @@ export default function ListeningPage() {
   const tracks = JSON.parse(JSON.stringify(Tracks)) as Track[]
 
   return (
-    <div>
+    <div className='w-5/6 mx-auto xl:w-full'>
       <h1 className="text-4xl font-serif">Listening</h1>
       <div className="mt-16 mb-36">
         <ul className='grid gap-6' style={gridLayout}>
