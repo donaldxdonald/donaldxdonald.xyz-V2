@@ -13,7 +13,7 @@ export default async function og() {
   return new ImageResponse(
     (
       <div
-        tw="relative w-full h-full bg-white flex items-center justify-center bg-purple-200 text-slate-800"
+        tw="relative w-full h-full bg-white flex items-center justify-center bg-indigo-100 text-slate-800"
         style={{
           fontFamily: 'Jost',
           backgroundImage: `url("${new URL('../public/noise.png', import.meta.url).toString()}")`,
