@@ -19,7 +19,7 @@ export async function generateMetadata({
     slug,
   } = post
   const url = `https://donaldxdonald.xyz/blog/${slug}`
-  const ogImage = image || `https://donaldxdonald.xyz/og?title=${encodeURIComponent(title)}&date=${date}`
+  const ogImage = image || `https://donaldxdonald.xyz/og?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}`
 
   return {
     title,
