@@ -21,7 +21,7 @@ export async function GET(req: NextRequest) {
         tw="relative w-full h-full bg-white flex items-center justify-center bg-indigo-100 text-slate-800"
         style={{
           fontFamily: 'Jost, system-ui, sans-serif',
-          backgroundImage: `url("${new URL('../../public/noise.png', import.meta.url).toString()}")`,
+          backgroundImage: `url("https://donaldxdonald.xyz/noise.png")`,
         }}
       >
         <span tw="absolute left-10 top-10 text-4xl">@donaldxdonald</span>
