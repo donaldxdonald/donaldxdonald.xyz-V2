@@ -26,7 +26,7 @@ export async function GET(req: NextRequest) {
       >
         <span tw="absolute left-10 top-10 text-4xl">@donaldxdonald</span>
         <span tw="absolute right-10 top-10 text-4xl">{dayjs(date).format('YYYY-MM-DD')}</span>
-        <h1 tw="text-7xl tracking-tighter mx-7">{decodeURIComponent(title)}</h1>
+        <h1 tw="text-7xl tracking-tighter mx-10">{decodeURIComponent(title)}</h1>
       </div>
     ),
     {
