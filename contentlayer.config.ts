@@ -34,7 +34,7 @@ const computedFields: ComputedFields = {
   description: {
     type: 'string',
     resolve: doc => {
-      return doc.description || doc.body.raw.trim().slice(0, 50)
+      return doc.description || doc.body.raw.trim().slice(0, 100)
     },
   },
   toc: {
