@@ -17,9 +17,6 @@ const postFields: FieldDefs = {
     type: 'string',
     required: true,
   },
-  description: {
-    type: 'string',
-  },
   image: {
     type: 'string',
   },
@@ -33,6 +30,12 @@ const computedFields: ComputedFields = {
   url: {
     type: 'string',
     resolve: doc => doc._raw.flattenedPath,
+  },
+  description: {
+    type: 'string',
+    resolve: doc => {
+      return doc.description || doc.body.raw.trim().slice(0, 50)
+    },
   },
   toc: {
     type: 'json',
