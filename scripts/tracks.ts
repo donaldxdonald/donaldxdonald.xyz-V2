@@ -5,7 +5,6 @@
 
 import { AccessToken, Page, SpotifyApi, Track as SpotifyTrack } from '@spotify/web-api-ts-sdk'
 import dotenv from 'dotenv'
-import fetch from 'node-fetch'
 import { Buffer } from 'node:buffer'
 import fs from 'node:fs/promises'
 import process from 'node:process'
@@ -39,9 +38,7 @@ async function main() {
   })
   const tokenData = (await tokenResponse.json()) as AccessToken
 
-  const spotifyClient = SpotifyApi.withAccessToken(cId!, tokenData, {
-    fetch: (req, init) => fetch(req as any, init as any) as any,
-  })
+  const spotifyClient = SpotifyApi.withAccessToken(cId!, tokenData)
 
   const tracksRes = (await spotifyClient.currentUser.topItems('tracks')) as any as Page<SpotifyTrack>
 
