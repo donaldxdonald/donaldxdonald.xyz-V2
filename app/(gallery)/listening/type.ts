@@ -1,6 +1,8 @@
+import { Image } from "@spotify/web-api-ts-sdk"
+
 export interface Artist {
   name: string
-  image: SpotifyApi.ImageObject
+  image: Image
 }
 
 export interface Track {
@@ -10,6 +12,6 @@ export interface Track {
   album: {
     name: string
     url: string
-    image: SpotifyApi.ImageObject
+    image: Image
   }
 }

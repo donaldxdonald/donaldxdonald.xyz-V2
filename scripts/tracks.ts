@@ -3,6 +3,7 @@
  * Inspired by https://github.com/wooorm/wooorm.github.io
  */
 
+import { AccessToken, Page, SpotifyApi, Track as SpotifyTrack } from '@spotify/web-api-ts-sdk'
 import dotenv from 'dotenv'
 import fetch from 'node-fetch'
 import { Buffer } from 'node:buffer'
@@ -36,22 +37,22 @@ async function main() {
     },
     body: parameters,
   })
-  const tokenData = (await tokenResponse.json()) as {access_token: string}
+  const tokenData = (await tokenResponse.json()) as AccessToken
 
-  const response = await fetch('https://api.spotify.com/v1/me/top/tracks', {
-    headers: { Authorization: 'Bearer ' + tokenData.access_token },
+  const spotifyClient = SpotifyApi.withAccessToken(cId!, tokenData, {
+    fetch: (req, init) => fetch(req as any, init as any) as any,
   })
 
-  const body = (await response.json()) as SpotifyApi.UsersTopTracksResponse
+  const tracksRes = (await spotifyClient.currentUser.topItems('tracks')) as any as Page<SpotifyTrack>
 
-  const artists = body.items.map((d): Track => {
+  const artists = tracksRes.items.map((d): Track => {
     return {
       name: d.name,
       url: d.uri,
-      authorName: d.artists.map(r => r.name).join(', '),
+      authorName: d.name,
       album: {
         name: d.album.name,
-        url: d.album.href,
+        url: d.album.uri,
         image: d.album.images[0],
       },
     }

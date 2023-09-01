@@ -4,6 +4,9 @@ dependencies:
   '@fontsource/jost':
     specifier: ^4.5.13
     version: 4.5.13
+  '@spotify/web-api-ts-sdk':
+    specifier: ^1.1.0
+    version: 1.1.0
   '@vercel/analytics':
     specifier: ^1.0.2
     version: 1.0.2
@@ -129,9 +132,6 @@ devDependencies:
   '@types/react-dom':
     specifier: 18.0.10
     version: 18.0.10
-  '@types/spotify-api':
-    specifier: ^0.0.22
-    version: 0.0.22
   '@wooorm/starry-night':
     specifier: ^2.1.1
     version: 2.1.1
@@ -1400,6 +1400,10 @@ packages:
       string.prototype.codepointat: 0.2.1
     dev: false
 
+  /@spotify/web-api-ts-sdk@1.1.0:
+    resolution: {integrity: sha512-SDMduy1YOc86boPQQbjiTJVHhVDUOFTBKMovmBizEbURGVae1Cvswyd/gzSQQwE1FUDXTD4Y8nhn9XHDGvRENA==}
+    dev: false
+
   /@swc/helpers@0.5.1:
     resolution: {integrity: sha512-sJ902EfIzn1Fa+qYmjdQqh8tPsoxyBz+8yBKC2HKUxyezKJFwPGOn7pv4WY6QuQW//ySQi5lJjA/ZT9sNWWNTg==}
     dependencies:
@@ -1530,10 +1534,6 @@ packages:
 
   /@types/semver@7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
-    dev: true
-
-  /@types/spotify-api@0.0.22:
-    resolution: {integrity: sha512-oZLKiI6Fck/BGd0QdmIdJCY351xQfRkfpx2Q23jIntL3YQx85vScYuFJMK81/NoSK9m7HYOl2DW4A9WomDuJOA==}
     dev: true
 
   /@types/unist@2.0.6:
