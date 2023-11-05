@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
   return new ImageResponse(
     (
       <div
-        tw="relative w-full h-full bg-white flex bg-indigo-100 text-slate-800"
+        tw="relative w-full h-full bg-white flex items-end bg-indigo-100 text-slate-800"
         style={{
           fontFamily: '"Noto Serif", system-ui, sans-serif',
           backgroundImage: `url("https://donaldxdonald.xyz/noise.png")`,
@@ -26,7 +26,7 @@ export async function GET(req: NextRequest) {
       >
         <span tw="absolute left-20 top-20 text-4xl">@donaldxdonald</span>
         <span tw="absolute right-20 top-20 text-4xl">{dayjs(date).format('YYYY-MM-DD')}</span>
-        <h1 tw="absolute max-w-screen left-0 px-20 bottom-20 whitespace-break-spaces text-7xl tracking-tighter">{decodeURIComponent(title)}</h1>
+        <h1 tw="mx-20 mb-20 text-7xl tracking-tighter">{decodeURIComponent(title)}</h1>
       </div>
     ),
     {
