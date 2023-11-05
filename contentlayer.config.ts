@@ -5,6 +5,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import { remark } from 'remark'
 import remarkGfm from 'remark-gfm'
+import strip from 'strip-markdown'
 import { visit } from 'unist-util-visit'
 import { rehypeStarryNight } from './lib/rehype-starry-night'
 
@@ -33,8 +34,19 @@ const computedFields: ComputedFields = {
   },
   description: {
     type: 'string',
-    resolve: doc => {
-      return doc.description || doc.body.raw.trim().slice(0, 100)
+    resolve: async doc => {
+      if (doc.description) {
+        return doc.description
+      }
+
+      const vFile = await remark()
+        .use(strip)
+        .process(doc.body.raw)
+
+      return String(vFile)
+        .trim()
+        .replace(/\n/g, ' ')
+        .slice(0, 100)
     },
   },
   toc: {
@@ -67,7 +79,7 @@ const computedFields: ComputedFields = {
 
 const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: 'blog/*.mdx',
+  filePathPattern: 'blog/*.md*',
   contentType: 'mdx',
   fields: postFields,
   computedFields,
@@ -75,7 +87,7 @@ const Post = defineDocumentType(() => ({
 
 const Weekly = defineDocumentType(() => ({
   name: 'Weekly',
-  filePathPattern: 'weekly/*.mdx',
+  filePathPattern: 'weekly/*.md*',
   contentType: 'mdx',
   fields: postFields,
   computedFields,
