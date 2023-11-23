@@ -46,7 +46,7 @@ async function main() {
     return {
       name: d.name,
       url: d.uri,
-      authorName: d.name,
+      authorName: d.artists.map(v => v.name).join(', '),
       album: {
         name: d.album.name,
         url: d.album.uri,

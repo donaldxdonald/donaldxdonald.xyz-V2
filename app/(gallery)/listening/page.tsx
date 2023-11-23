@@ -3,7 +3,7 @@ import { CSSProperties } from 'react'
 import { Track } from './type'
 
 const gridLayout: CSSProperties = {
-  gridTemplateColumns: 'repeat(auto-fill, minmax(12em, 1fr))',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(12em, 1fr))',
 }
 
 export default function ListeningPage() {
@@ -13,7 +13,7 @@ export default function ListeningPage() {
     <div className='w-5/6 mx-auto xl:w-full'>
       <h1 className="text-4xl font-serif">Listening</h1>
       <div className="mt-16 mb-36">
-        <ul className='grid gap-6' style={gridLayout}>
+        <ul className='grid gap-2 md:gap-4' style={gridLayout}>
           {
             tracks.map((v, i) => (
               <a href={v.url} key={v.url}
