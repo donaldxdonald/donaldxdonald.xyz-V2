@@ -1,11 +1,10 @@
 import { ImageResponse } from "next/server"
-
 export const runtime = "edge"
 
 export default async function og() {
   const fontJost = await fetch(
     new URL(
-      '../node_modules/@fontsource/jost/files/jost-latin-400-normal.woff',
+      '../node_modules/@fontsource/jost/files/jost-latin-400-normal.woff2',
       import.meta.url,
     ),
   ).then(res => res.arrayBuffer())

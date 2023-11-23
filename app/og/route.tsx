@@ -6,7 +6,7 @@ export const runtime = "edge"
 export async function GET(req: NextRequest) {
   const fontNotoSerif = await fetch(
     new URL(
-      '../../node_modules/@fontsource/noto-serif/files/noto-serif-latin-400-normal.woff',
+      '../../node_modules/@fontsource/noto-serif/files/noto-serif-latin-400-normal.woff2',
       import.meta.url,
     ),
   ).then(res => res.arrayBuffer())
