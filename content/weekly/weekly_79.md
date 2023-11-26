@@ -9,7 +9,7 @@ date: 2023-11-20 00:20
 
 - [Ruby on Rails 纪录片释出](https://www.youtube.com/watch?v=HDKUEXBF3B4)。
 - 微软的 Bing AI [将独立成一个 Copilot](https://copilot.microsoft.com/)。
-- Sam Altman [被踢出了 OpenAI](https://openai.com/blog/openai-announces-leadership-transition)，但又被董事会了。（周六解雇，周日和解，周一上班
+- Sam Altman [被踢出了 OpenAI](https://openai.com/blog/openai-announces-leadership-transition)，但又被董事会劝回去。（周六解雇，周日和解，周一上班
 
 ## 有趣
 
