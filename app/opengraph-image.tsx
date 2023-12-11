@@ -4,7 +4,7 @@ export const runtime = "edge"
 export default async function og() {
   const fontJost = await fetch(
     new URL(
-      '../node_modules/@fontsource/jost/files/jost-latin-400-normal.woff2',
+      '../node_modules/@fontsource/jost/files/jost-latin-400-normal.woff',
       import.meta.url,
     ),
   ).then(res => res.arrayBuffer())
