@@ -118,7 +118,7 @@ DOM Node ====> **Blot**
     },
     {
       "attributes": {
-        "link": "https://www.markji.com/"
+        "link": "https://donaldxdonald.xyz/"
       },
       "insert": "this"
     },
@@ -183,7 +183,7 @@ ProseMirror 是有 schema （范式）的，所以定义好了 schema 以后 Pro
         {
           "type": "link",
           "attrs": {
-            "href": "https://www.markji.com",
+            "href": "https://donaldxdonald.xyz",
             "title": ""
           }
         }
