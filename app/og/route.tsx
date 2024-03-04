@@ -1,5 +1,6 @@
 import dayjs from "dayjs"
-import { ImageResponse, NextRequest } from "next/server"
+import { ImageResponse } from "next/og"
+import { NextRequest } from "next/server"
 
 export const runtime = "edge"
 

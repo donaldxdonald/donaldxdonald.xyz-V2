@@ -18,11 +18,11 @@
   },
   "engineStrict": true,
   "dependencies": {
-    "@fontsource/jost": "^5.0.15",
-    "@fontsource/noto-serif": "^5.0.17",
-    "@spotify/web-api-ts-sdk": "^1.1.2",
-    "@vercel/analytics": "^1.1.1",
-    "@vercel/og": "^0.5.20",
+    "@fontsource/jost": "^5.0.17",
+    "@fontsource/noto-serif": "^5.0.19",
+    "@spotify/web-api-ts-sdk": "^1.2.0",
+    "@vercel/analytics": "^1.2.2",
+    "@vercel/og": "^0.6.2",
     "classnames": "^2.3.2",
     "contentlayer": "^0.3.4",
     "dayjs": "^1.11.10",
@@ -32,7 +32,7 @@
     "hast-util-to-string": "^2.0.0",
     "lucide-react": "0.292.0",
     "mdast-util-to-string": "^3.2.0",
-    "next": "13.4.12",
+    "next": "14.1.1",
     "next-contentlayer": "^0.3.4",
     "prop-types": "^15.8.1",
     "react": "18.2.0",
@@ -45,7 +45,7 @@
     "remark-gfm": "^3.0.1",
     "remark-html": "^15.0.2",
     "remark-mdx": "^2.3.0",
-    "sharp": "^0.32.6",
+    "sharp": "^0.33.2",
     "strip-markdown": "^5.0.1",
     "to-vfile": "^7.2.4",
     "tsx": "^3.14.0",
@@ -78,5 +78,8 @@
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
+  },
+  "overrides": {
+    "next": "^14"
   }
 }

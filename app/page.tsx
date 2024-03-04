@@ -1,3 +1,4 @@
+import { Viewport } from "next"
 import Link from "next/link"
 import { Fragment } from "react"
 import Balancer from "react-wrap-balancer"
@@ -13,6 +14,10 @@ const wordMap: Record<number, {route: string}> = {
   24: {
     route: '/weekly',
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: "#faf5ff",
 }
 
 export default async function Home() {
