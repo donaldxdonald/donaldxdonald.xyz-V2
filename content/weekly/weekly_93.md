@@ -1,6 +1,6 @@
 ---
 title: '#93: Mental Health in Open Source'
-date: 2024-03-18 00: 10
+date: 2024-03-18 00:10
 ---
 
 
