@@ -1,5 +1,5 @@
 ---
-title: '#99: Why the database version and how it’s going?'
+title: '#99: Why the database version and how it's going?'
 date: 2024-05-11 22:47
 ---
 
@@ -61,6 +61,6 @@ date: 2024-05-11 22:47
   
     通过 GitHub、Photoshop Web、Figma 等的示例来看如何在 CSS 中处理树状视图组件的缩进。
     
-- [Why the database version and how it’s going?](https://discuss.logseq.com/t/why-the-database-version-and-how-its-going/26744)
+- [Why the database version and how it's going?](https://discuss.logseq.com/t/why-the-database-version-and-how-its-going/26744)
   
     知识库软件 Logseq 最近宣布即将开发数据库版本，在论坛里作者解释了以纯文本（Markdown）为基础的弊端以及阐述了未来的计划。
