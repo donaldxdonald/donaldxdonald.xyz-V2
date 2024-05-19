@@ -1,7 +1,7 @@
 
 import { Grammar, common, createStarryNight } from '@wooorm/starry-night'
-import { ElementContent } from 'hast'
-import { Root, toString } from 'hast-util-to-string'
+import { ElementContent, Root } from 'hast'
+import { toString } from 'hast-util-to-string'
 import { Plugin } from 'unified'
 import { visit } from 'unist-util-visit'
 
@@ -18,7 +18,7 @@ export const rehypeStarryNight: Plugin<[Options], Root> = (options: Options = {}
     const starryNight = await starryNightPromise
 
     visit(tree, 'element', (node, index, parent) => {
-      if (!parent || index === null || node.tagName !== 'pre') {
+      if (!parent || index === null || index === undefined || node.tagName !== 'pre') {
         return
       }
 

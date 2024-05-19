@@ -1,5 +1,6 @@
-import { ComputedFields, FieldDefs, defineDocumentType, makeSource } from 'contentlayer/source-files'
+import { ComputedFields, FieldDefs, defineDocumentType, makeSource } from 'contentlayer2/source-files'
 import { slug } from 'github-slugger'
+import { Heading } from 'mdast'
 import { toString } from 'mdast-util-to-string'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
@@ -58,7 +59,7 @@ const computedFields: ComputedFields = {
         .use(remarkGfm)
         .use(
           () => tree => {
-            visit(tree, 'heading', node => {
+            visit(tree, 'heading', (node: Heading) => {
               if (node.depth <= 2) {
                 const text = toString(node)
                 headingList.push({
