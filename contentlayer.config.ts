@@ -1,3 +1,4 @@
+import rehypeShiki, { RehypeShikiOptions } from '@shikijs/rehype'
 import { ComputedFields, FieldDefs, defineDocumentType, makeSource } from 'contentlayer2/source-files'
 import { slug } from 'github-slugger'
 import { Heading } from 'mdast'
@@ -8,8 +9,6 @@ import { remark } from 'remark'
 import remarkGfm from 'remark-gfm'
 import strip from 'strip-markdown'
 import { visit } from 'unist-util-visit'
-import { rehypeStarryNight } from './lib/rehype-starry-night'
-
 const postFields: FieldDefs = {
   title: {
     type: 'string',
@@ -94,6 +93,30 @@ const Weekly = defineDocumentType(() => ({
   computedFields,
 }))
 
+const shikiOptions: RehypeShikiOptions = {
+  theme: 'rose-pine-moon',
+  transformers: [
+    {
+      pre(node) {
+        const header: typeof node = {
+          type: 'element',
+          tagName: 'div',
+          properties: {},
+          children: [
+            {
+              type: 'element',
+              tagName: 'span',
+              properties: {},
+              children: [{ type: 'text', value: this.options.lang || 'text' }],
+            },
+          ],
+        }
+        node.children.unshift(header)
+      },
+    },
+  ],
+}
+
 export default makeSource({
   contentDirPath: 'content',
   contentDirExclude: ['json'],
@@ -101,7 +124,8 @@ export default makeSource({
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
-      rehypeStarryNight,
+      // rehypeStarryNight,
+      [rehypeShiki, shikiOptions],
       rehypeSlug,
       [rehypeAutolinkHeadings, {
         properties: { className: ['header-anchor'], ariaHidden: true, tabIndex: -1 },

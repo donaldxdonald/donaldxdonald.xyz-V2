@@ -1,6 +1,4 @@
 @import url("../assets/styles/md.css");
-@import url("node_modules/@wooorm/starry-night/style/core.css");
-@import url("node_modules/@wooorm/starry-night/style/dark.css");
 
 @tailwind base;
 @tailwind components;

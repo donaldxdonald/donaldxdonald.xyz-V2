@@ -48,6 +48,10 @@ code[class*=language-] {
   @apply rounded py-1 px-2 bg-gray-200;
 }
 
+.prose pre > div {
+  @apply -mx-4 -mt-3 mb-4 px-4 py-2 bg-theme/50 text-white select-none;
+}
+
 .prose .header-anchor {
   @apply absolute -left-4 top-0 opacity-0 text-indigo-900 font-bold no-underline;
 }
