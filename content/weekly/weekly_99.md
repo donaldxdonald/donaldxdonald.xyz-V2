@@ -1,5 +1,5 @@
 ---
-title: '#99: Why the database version and how it's going?'
+title: "#99: Why the database version and how it's going?"
 date: 2024-05-11 22:47
 ---
 
