@@ -7,8 +7,9 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import { remark } from 'remark'
 import remarkGfm from 'remark-gfm'
-import strip from 'strip-markdown'
+import stripMarkdown from 'strip-markdown'
 import { visit } from 'unist-util-visit'
+
 const postFields: FieldDefs = {
   title: {
     type: 'string',
@@ -23,6 +24,15 @@ const postFields: FieldDefs = {
   },
 }
 
+const strip = (content: string) => {
+  const vFile = remark()
+    .use(stripMarkdown)
+    .processSync(content)
+  return String(vFile)
+    .trim()
+    .replace(/\n/g, ' ')
+}
+
 const computedFields: ComputedFields = {
   slug: {
     type: 'string',
@@ -32,6 +42,10 @@ const computedFields: ComputedFields = {
     type: 'string',
     resolve: doc => doc._raw.flattenedPath,
   },
+  strip: {
+    type: 'string',
+    resolve: doc => strip(doc.body.raw),
+  },
   description: {
     type: 'string',
     resolve: async doc => {
@@ -39,13 +53,7 @@ const computedFields: ComputedFields = {
         return doc.description
       }
 
-      const vFile = await remark()
-        .use(strip)
-        .process(doc.body.raw)
-
-      return String(vFile)
-        .trim()
-        .replace(/\n/g, ' ')
+      return strip(doc.body.raw)
         .slice(0, 100)
     },
   },

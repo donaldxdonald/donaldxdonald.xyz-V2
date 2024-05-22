@@ -1,6 +1,7 @@
 import { Analytics } from "@vercel/analytics/react"
 import cx from "classnames"
 import { Metadata } from "next"
+import '../assets/styles/cmdk.scss'
 import { inter, jost, notoSans, notoSerif } from "./fonts"
 import "./globals.css"
 
