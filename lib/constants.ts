@@ -7,15 +7,18 @@ export const SocialLinks = [
     icon: Twitter,
     text: '@donaldxdonald',
     link: '/twitter',
+    desc: 'Twitter / X',
   },
   {
     icon: Github,
     text: '@donaldxdonald',
     link: '/github',
+    desc: 'Github',
   },
   {
     icon: Mail,
     text: 'donaldxdonald@duck.com',
     link: 'mailto:donaldxdonald@duck.com',
+    desc: 'Email',
   },
 ]

@@ -1,6 +1,6 @@
 
 :root {
-  --cmdk-shadow: 0 16px 70px rgb(0 0 0 / 20%);
+  --cmdk-shadow: 0 16px 40px rgb(0 0 0 / 20%);
 
   --lowContrast: #ffffff;
   --highContrast: #000000;
