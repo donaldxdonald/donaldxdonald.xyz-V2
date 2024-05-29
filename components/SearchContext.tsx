@@ -125,7 +125,7 @@ export const SearchContext: FC = () => {
                     <p className='truncate max-w-[98%]'>{'strip' in item ? item.strip : item.content}</p>
                     <div className='text-xs text-[--gray9] flex items-center justify-between w-full'>
                       <p>{item.title}</p>
-                      <span>{item.date.split(' ')[0]}</span>
+                      <span className='font-mono'>{item.date.split(' ')[0]}</span>
                     </div>
                   </Command.Item>
                 ))
@@ -147,7 +147,7 @@ export const SearchContext: FC = () => {
                     <p className='truncate max-w-[98%]'>{'strip' in item ? item.strip : item.content}</p>
                     <div className='text-xs text-[--gray9] flex items-center justify-between w-full'>
                       <p>{item.title}</p>
-                      <span>{item.date.split(' ')[0]}</span>
+                      <span className='font-mono'>{item.date.split(' ')[0]}</span>
                     </div>
                   </Command.Item>
                 ))
