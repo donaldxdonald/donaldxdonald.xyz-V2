@@ -51,6 +51,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".contentlayer/generated",
+    "*.config.*"
   ],
   "exclude": [
     "node_modules"
