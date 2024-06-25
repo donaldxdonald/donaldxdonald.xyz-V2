@@ -1,11 +1,16 @@
-import { dndxdnd } from '@dndxdnd/eslint-config'
-import next from '@next/eslint-plugin-next'
+import { GLOB_TS, GLOB_TSX, dndxdnd } from '@dndxdnd/eslint-config'
 import { fixupPluginRules } from "@eslint/compat"
+// @ts-expect-error types
+import nextPlugin from '@next/eslint-plugin-next'
 
 export default dndxdnd([
   {
+    files: [GLOB_TS, GLOB_TSX],
     plugins: {
-      '@next': fixupPluginRules(next)['configs']['core-web-vitals'],
+      '@next/next': nextPlugin,
+    },
+    rules: {
+      ...fixupPluginRules(nextPlugin).configs['core-web-vitals']['rules'],
     },
   },
 ])

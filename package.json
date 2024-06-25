@@ -10,7 +10,7 @@
     "gen:tracks": "tsx ./scripts/tracks.ts",
     "format": "eslint \"**/*.{js,jsx,ts,tsx}\"",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "pnpm run format",
     "prepare": "npx simple-git-hooks"
   },
   "engines": {
@@ -87,5 +87,10 @@
   },
   "overrides": {
     "next": "^14"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
   }
 }
