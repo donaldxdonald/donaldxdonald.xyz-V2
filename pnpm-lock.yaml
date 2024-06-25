@@ -44,6 +44,9 @@ importers:
       feed:
         specifier: ^4.2.2
         version: 4.2.2
+      fuse.js:
+        specifier: ^7.0.0
+        version: 7.0.0
       github-slugger:
         specifier: ^2.0.0
         version: 2.0.0
@@ -2000,6 +2003,10 @@ packages:
 
   function-bind@1.1.2:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
+
+  fuse.js@7.0.0:
+    resolution: {integrity: sha512-14F4hBIxqKvD4Zz/XjDc3y94mNZN6pRv3U13Udo0lNLCWRBUsrMv2xwcF/y/Z5sV6+FQW+/ow68cHpm4sunt8Q==}
+    engines: {node: '>=10'}
 
   get-caller-file@2.0.5:
     resolution: {integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==}
@@ -5605,6 +5612,8 @@ snapshots:
   function-bind@1.1.1: {}
 
   function-bind@1.1.2: {}
+
+  fuse.js@7.0.0: {}
 
   get-caller-file@2.0.5: {}
 
