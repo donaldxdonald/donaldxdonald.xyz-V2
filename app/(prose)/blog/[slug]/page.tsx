@@ -1,6 +1,6 @@
-import Post from '@/components/layout/post'
 import { allPosts } from 'contentlayer/generated'
 import { Metadata } from 'next'
+import Post from '@/components/layout/post'
 import { TOC } from '../../../../components/mdx/TOC'
 
 export async function generateMetadata({
