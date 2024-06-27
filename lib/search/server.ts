@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from "next/server"
-import Fuse from "fuse.js"
-import { StructuredData } from "../remark"
-import { SortedResult } from "./shared"
+import { NextRequest, NextResponse } from 'next/server'
+import Fuse from 'fuse.js'
+import { StructuredData } from '../remark'
+import { SortedResult } from './shared'
 
 export interface AdvancedIndex {
   id: string
@@ -22,7 +22,6 @@ export interface AdvancedOptions {
   indexes: AdvancedIndex[]
 }
 
-
 interface SearchAPI {
   GET: (request: NextRequest) => NextResponse<SortedResult[]>
 
@@ -31,7 +30,6 @@ interface SearchAPI {
     options?: { locale?: string; tag?: string },
   ) => SortedResult[]
 }
-
 
 export interface Index {
   title: string
@@ -60,16 +58,23 @@ function create(search: SearchAPI['search']): SearchAPI {
 export function createSearchAPI(
   options: AdvancedOptions,
 ): SearchAPI {
-
   return initSearchAPIAdvanced(options as AdvancedOptions)
 }
 
 export function initSearchAPIAdvanced({
   indexes,
 }: AdvancedOptions): SearchAPI {
-
   const fuse = new Fuse(indexes, {
-    keys: ['title', 'content'],
+    keys: [
+      {
+        name: 'title',
+        weight: 0.5,
+      },
+      {
+        name: 'content',
+        weight: 0.8,
+      },
+    ],
     includeMatches: true,
     includeScore: true,
     shouldSort: true,
@@ -80,15 +85,19 @@ export function initSearchAPIAdvanced({
       limit: 10,
     })
 
-    return results.map<SortedResult>(p => ({
-      type: 'page',
-      content: p.item.content,
-      id: p.item.id,
-      url: p.item.url,
-      title: p.item.title,
-      matched: p.matches?.[0].value || '',
-    }))
-    
+    return results.map<SortedResult>(p => {
+      const firstRange = p.matches?.[0]?.indices?.[0] || [0, 0]
+      const target = p.item[(p.matches?.[0].key || 'content') as keyof AdvancedIndex] as string
+      const start = Math.max(firstRange[0] - 10, 0)
+      const end = Math.min(firstRange[1] + 100, target.length)
+      return {
+        type: 'page',
+        content: p.item.content,
+        id: p.item.id,
+        url: p.item.url,
+        title: p.item.title,
+        matched: target.slice(start, end),
+      }
+    })
   })
-
 }

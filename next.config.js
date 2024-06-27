@@ -6,20 +6,20 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [
-      "cdn.donaldxdonald.xyz",
-      "i.scdn.co",
+      'cdn.donaldxdonald.xyz',
+      'i.scdn.co',
     ],
   },
   async redirects() {
     return [
       {
-        source: "/github",
-        destination: "https://github.com/donaldxdonald",
+        source: '/github',
+        destination: 'https://github.com/donaldxdonald',
         permanent: false,
       },
       {
-        source: "/twitter",
-        destination: "https://twitter.com/donaldxdonald",
+        source: '/twitter',
+        destination: 'https://twitter.com/donaldxdonald',
         permanent: false,
       },
     ]

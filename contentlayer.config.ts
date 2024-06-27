@@ -60,7 +60,7 @@ const computedFields: ComputedFields = {
   toc: {
     type: 'json',
     resolve: async doc => {
-      const headingList: {depth: number; text: string; slug: string}[] = []
+      const headingList: { depth: number; text: string; slug: string }[] = []
 
       await remark()
         .use(remarkGfm)
