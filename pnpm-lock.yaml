@@ -14,6 +14,12 @@ importers:
       '@fontsource/noto-serif':
         specifier: ^5.0.20
         version: 5.0.20
+      '@orama/orama':
+        specifier: ^2.0.21
+        version: 2.0.21
+      '@orama/plugin-match-highlight':
+        specifier: ^2.0.21
+        version: 2.0.21
       '@spotify/web-api-ts-sdk':
         specifier: ^1.2.0
         version: 1.2.0
@@ -44,9 +50,6 @@ importers:
       feed:
         specifier: ^4.2.2
         version: 4.2.2
-      fuse.js:
-        specifier: ^7.0.0
-        version: 7.0.0
       github-slugger:
         specifier: ^2.0.0
         version: 2.0.0
@@ -879,6 +882,13 @@ packages:
   '@opentelemetry/semantic-conventions@1.24.1':
     resolution: {integrity: sha512-VkliWlS4/+GHLLW7J/rVBA00uXus1SWvwFvcUDxDwmFxYfg/2VI6ekwdXS28cjI8Qz2ky2BzG8OUHo+WeYIWqw==}
     engines: {node: '>=14'}
+
+  '@orama/orama@2.0.21':
+    resolution: {integrity: sha512-XZpyjyNw4Mcpg94+gUvxmyyiFTZAdXvJ1aFPqHABarofu86oNwZL5tQUIj84xa1lrQiaeSxNKNBw0w4y5We5Yg==}
+    engines: {node: '>= 16.0.0'}
+
+  '@orama/plugin-match-highlight@2.0.21':
+    resolution: {integrity: sha512-KP3kPZdhYI3RZe0tJTpujq2GKeBRa+ACZ1zQYUxPDWfuPcAvgQzbPS5Isp6ht2Nbso2U+DK1jgLDOCSt97mpyg==}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -2035,10 +2045,6 @@ packages:
 
   function-bind@1.1.2:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
-
-  fuse.js@7.0.0:
-    resolution: {integrity: sha512-14F4hBIxqKvD4Zz/XjDc3y94mNZN6pRv3U13Udo0lNLCWRBUsrMv2xwcF/y/Z5sV6+FQW+/ow68cHpm4sunt8Q==}
-    engines: {node: '>=10'}
 
   get-caller-file@2.0.5:
     resolution: {integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==}
@@ -4400,6 +4406,12 @@ snapshots:
 
   '@opentelemetry/semantic-conventions@1.24.1': {}
 
+  '@orama/orama@2.0.21': {}
+
+  '@orama/plugin-match-highlight@2.0.21':
+    dependencies:
+      '@orama/orama': 2.0.21
+
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
@@ -5695,8 +5707,6 @@ snapshots:
   function-bind@1.1.1: {}
 
   function-bind@1.1.2: {}
-
-  fuse.js@7.0.0: {}
 
   get-caller-file@2.0.5: {}
 

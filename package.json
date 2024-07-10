@@ -20,6 +20,8 @@
   "dependencies": {
     "@fontsource/jost": "^5.0.18",
     "@fontsource/noto-serif": "^5.0.20",
+    "@orama/orama": "^2.0.21",
+    "@orama/plugin-match-highlight": "^2.0.21",
     "@spotify/web-api-ts-sdk": "^1.2.0",
     "@uidotdev/usehooks": "^2.4.1",
     "@vercel/analytics": "^1.2.2",
@@ -30,7 +32,6 @@
     "dayjs": "^1.11.10",
     "fast-glob": "^3.3.2",
     "feed": "^4.2.2",
-    "fuse.js": "^7.0.0",
     "github-slugger": "^2.0.0",
     "lucide-react": "0.292.0",
     "mdast-util-to-string": "^4.0.0",

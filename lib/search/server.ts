@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import Fuse from 'fuse.js'
-import { StructuredData } from '../remark'
+import { Tokenizer, create, insertMultiple } from '@orama/orama'
+import { Position, SearchResultWithHighlight, afterInsert, searchWithHighlight } from '@orama/plugin-match-highlight'
 import { SortedResult } from './shared'
 
 export interface AdvancedIndex {
@@ -14,7 +14,7 @@ export interface AdvancedIndex {
   /**
    * preprocess mdx content with `structure`
    */
-  structuredData?: StructuredData
+  // structuredData?: StructuredData
   url: string
 }
 
@@ -23,12 +23,12 @@ export interface AdvancedOptions {
 }
 
 interface SearchAPI {
-  GET: (request: NextRequest) => NextResponse<SortedResult[]>
+  GET: (request: NextRequest) => Promise<NextResponse<SortedResult[]>>
 
   search: (
     query: string,
     options?: { locale?: string; tag?: string },
-  ) => SortedResult[]
+  ) => Promise<SortedResult[]>
 }
 
 export interface Index {
@@ -38,15 +38,24 @@ export interface Index {
   keywords?: string
 }
 
-function create(search: SearchAPI['search']): SearchAPI {
+const chineseTokenizer: Tokenizer = {
+  language: 'english',
+  normalizationCache: new Map(),
+  tokenize: (raw: string) => {
+    const segmenter = new Intl.Segmenter('zh', { granularity: 'word' })
+    return Array.from(segmenter.segment(raw)).map(v => v.segment)
+  },
+}
+
+function createSearch(searchFn: SearchAPI['search']): SearchAPI {
   return {
-    search,
-    GET(request) {
+    search: searchFn,
+    GET: async request => {
       const query = request.nextUrl.searchParams.get('query')
       if (!query) return NextResponse.json([])
 
       return NextResponse.json(
-        search(query, {
+        await searchFn(query, {
           tag: request.nextUrl.searchParams.get('tag') ?? undefined,
           locale: request.nextUrl.searchParams.get('locale') ?? undefined,
         }),
@@ -57,47 +66,69 @@ function create(search: SearchAPI['search']): SearchAPI {
 
 export function createSearchAPI(
   options: AdvancedOptions,
-): SearchAPI {
+): Promise<SearchAPI> {
   return initSearchAPIAdvanced(options as AdvancedOptions)
 }
 
-export function initSearchAPIAdvanced({
+export async function initSearchAPIAdvanced({
   indexes,
-}: AdvancedOptions): SearchAPI {
-  const fuse = new Fuse(indexes, {
-    keys: [
+}: AdvancedOptions): Promise<SearchAPI> {
+  const db = await create({
+    schema: {
+      title: 'string',
+      content: 'string',
+      url: 'string',
+    },
+    components: {
+      tokenizer: chineseTokenizer,
+    },
+    plugins: [
       {
-        name: 'title',
-        weight: 0.5,
-      },
-      {
-        name: 'content',
-        weight: 0.8,
+        name: 'highlight',
+        afterInsert: afterInsert,
       },
     ],
-    includeMatches: true,
-    includeScore: true,
-    shouldSort: true,
   })
 
-  return create(query => {
-    const results = fuse.search(query, {
-      limit: 10,
-    })
+  await insertMultiple(db, indexes as never[])
 
-    return results.map<SortedResult>(p => {
-      const firstRange = p.matches?.[0]?.indices?.[0] || [0, 0]
-      const target = p.item[(p.matches?.[0].key || 'content') as keyof AdvancedIndex] as string
-      const start = Math.max(firstRange[0] - 10, 0)
-      const end = Math.min(firstRange[1] + 100, target.length)
-      return {
-        type: 'page',
-        content: p.item.content,
-        id: p.item.id,
-        url: p.item.url,
-        title: p.item.title,
-        matched: target.slice(start, end),
+  return createSearch(async query => {
+    const results = (await searchWithHighlight(db, {
+      term: query,
+    })) as SearchResultWithHighlight<AdvancedIndex>
+
+    const handledResults: SortedResult[] = []
+    results.hits.forEach(r => {
+      const p = r.document
+      let resultForLink: SortedResult | undefined = undefined
+      for (const k of ['content', 'title']) {
+        const v = r.positions[k]
+        for (const positions of Object.values(v)) {
+          if (positions.length === 0) continue
+          resultForLink = handleRange(p, k as keyof AdvancedIndex, positions[0])
+          break
+        }
+        if (resultForLink) break
+      }
+      if (resultForLink) {
+        handledResults.push(resultForLink)
       }
     })
+    return handledResults
   })
+}
+
+function handleRange(item: AdvancedIndex, key: keyof AdvancedIndex, range: Position): SortedResult {
+  const target = item[key] || ''
+
+  const start = range.start
+  const end = Math.min(range.start + range.length + 100, target.length)
+  return {
+    type: 'page',
+    content: item.content,
+    id: item.id,
+    url: item.url,
+    title: item.title,
+    matched: target.slice(start, end),
+  }
 }

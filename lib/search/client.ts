@@ -1,6 +1,6 @@
-import { useDebounce } from "@uidotdev/usehooks"
-import { useEffect, useState } from "react"
-import { SortedResult } from "./shared"
+import { useDebounce } from '@uidotdev/usehooks'
+import { useEffect, useState } from 'react'
+import { SortedResult } from './shared'
 
 async function fetchDocs(api: string, query: string) {
   if (query.length === 0) return []
@@ -8,7 +8,7 @@ async function fetchDocs(api: string, query: string) {
   params.set('query', query)
   const res = await fetch(`${api}?${params.toString()}`)
   if (!res.ok) throw new Error(await res.text())
-  return (await res.json()) as SortedResult[]  
+  return (await res.json()) as SortedResult[]
 }
 
 export const useDocsSearch = (api = '/api/search') => {

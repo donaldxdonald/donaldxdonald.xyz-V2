@@ -1,7 +1,7 @@
-import { allDocuments } from "contentlayer/generated"
-import { AdvancedIndex, createSearchAPI } from "../../../lib/search/server"
+import { allDocuments } from 'contentlayer/generated'
+import { AdvancedIndex, createSearchAPI } from '../../../lib/search/server'
 
-export const { GET } = createSearchAPI({
+export const { GET } = await createSearchAPI({
   indexes: allDocuments.map<AdvancedIndex>(v => ({
     id: v.url,
     url: v.url,
