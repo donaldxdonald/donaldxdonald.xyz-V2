@@ -22,6 +22,11 @@ const nextConfig = {
         destination: 'https://twitter.com/donaldxdonald',
         permanent: false,
       },
+      {
+        source: '/resume',
+        destination: 'https://donaldxdonald.notion.site/Zhihao-Mo-2cc2f9ba5775446eac581701f748cc6a',
+        permanent: false,
+      },
     ]
   },
 }
