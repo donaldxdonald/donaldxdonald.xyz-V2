@@ -1,6 +1,5 @@
 import { writeFile } from 'fs/promises'
 import { join } from 'path'
-import fg from 'fast-glob'
 import { Author, Feed, FeedOptions, Item } from 'feed'
 import { remark } from 'remark'
 import remarkFrontmatter from 'remark-frontmatter'
@@ -9,10 +8,11 @@ import remarkHtml from 'remark-html'
 import remarkMdx from 'remark-mdx'
 import { read } from 'to-vfile'
 import { matter } from 'vfile-matter'
-import { VFile } from 'vfile-matter/lib'
+import { fdir } from 'fdir'
+import type { Plugin } from 'unified'
 
-export function customFrontMatterPlugin() {
-  return (_: unknown, file: VFile) => {
+export const customFrontMatterPlugin: Plugin = () => {
+  return (_, file) => {
     matter(file)
   }
 }
@@ -39,9 +39,13 @@ const AUTHOR: Author = {
 
 const COPY_RIGHT = 'CC BY-NC-SA 4.0 2023 © Donald Mok'
 
-async function buildBlogRSS() {
-  const files = await fg(join(__dirname, '../content/blog/*.{md,mdx}'))
+const contentCrawler = new fdir({
+  includeBasePath: true,
+}).glob('**/*.{md,mdx}')
 
+async function buildBlogRSS() {
+  const files = await contentCrawler.crawl(join(__dirname, '../content/blog')).withPromise()
+  console.log('files', files)
   const options: FeedOptions = {
     copyright: COPY_RIGHT,
     title: 'Donald x Blog',
@@ -74,7 +78,7 @@ async function buildBlogRSS() {
 }
 
 async function buildWeeklyRSS() {
-  const files = await fg(join(__dirname, '../content/weekly/*.{md,mdx}'))
+  const files = await contentCrawler.crawl(join(__dirname, '../content/weekly')).withPromise()
 
   const options: FeedOptions = {
     copyright: COPY_RIGHT,

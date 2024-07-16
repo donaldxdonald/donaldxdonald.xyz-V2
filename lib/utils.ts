@@ -1,4 +1,4 @@
-import { remove } from "diacritics"
+import { remove } from 'diacritics'
 
 // string.js slugify drops non ascii chars so we have to
 // use a custom implementation here
