@@ -1,4 +1,4 @@
-import { RehypeShikiOptions } from "@shikijs/rehype"
+import { RehypeShikiOptions } from '@shikijs/rehype'
 
 export const shikiOptions: RehypeShikiOptions = {
   theme: 'rose-pine-moon',

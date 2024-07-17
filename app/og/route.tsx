@@ -1,8 +1,8 @@
-import dayjs from "dayjs"
-import { ImageResponse } from "next/og"
-import { NextRequest } from "next/server"
+import dayjs from 'dayjs'
+import { ImageResponse } from 'next/og'
+import { NextRequest } from 'next/server'
 
-export const runtime = "edge"
+export const runtime = 'edge'
 
 export async function GET(req: NextRequest) {
   const fontNotoSerif = await fetch(
@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
         tw="relative w-full h-full bg-white flex items-end bg-indigo-100 text-slate-800"
         style={{
           fontFamily: '"Noto Serif", system-ui, sans-serif',
-          backgroundImage: `url("https://donaldxdonald.xyz/noise.png")`,
+          backgroundImage: 'url("https://donaldxdonald.xyz/noise.png")',
         }}
       >
         <span tw="absolute left-20 top-20 text-4xl">@donaldxdonald</span>

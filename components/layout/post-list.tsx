@@ -4,9 +4,7 @@ import Link from 'next/link'
 import { Post } from 'content-collections'
 import { groupBy } from '../../lib/utils'
 
-export default function PostList({ list }: {
-  list: Post[]
-}) {
+export default function PostList({ list }: { list: Post[] }) {
   const groupedList = groupBy(list, item => dayjs(item.date).format('YYYY'))
   const groupedSortedList = Object.keys(groupedList)
     .sort((a, b) => {

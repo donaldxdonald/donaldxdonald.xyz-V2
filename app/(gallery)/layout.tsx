@@ -1,4 +1,4 @@
-import Sidebar from "@/components/layout/sidebar"
+import Sidebar from '@/components/layout/sidebar'
 
 export default function GalleryLayout({ children }: {
   children: React.ReactNode

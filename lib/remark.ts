@@ -1,4 +1,4 @@
-import { Plugin } from "unified"
+import { Plugin } from 'unified'
 
 export interface StructuredData {
   headings: Heading[]

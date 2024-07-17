@@ -1,10 +1,10 @@
 'use client'
 
-import { ArrowLeft } from "lucide-react"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { ArrowLeft } from 'lucide-react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
-export const TOC = ({ tableOfContents, hrefPrefix }: {tableOfContents: {depth: number; text: string; slug: string}[]; hrefPrefix: string}) => {
+export const TOC = ({ tableOfContents, hrefPrefix }: { tableOfContents: { depth: number; text: string; slug: string }[]; hrefPrefix: string }) => {
   const router = useRouter()
 
   return (

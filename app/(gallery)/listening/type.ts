@@ -1,4 +1,4 @@
-import { Image } from "@spotify/web-api-ts-sdk"
+import { Image } from '@spotify/web-api-ts-sdk'
 
 export interface Artist {
   name: string

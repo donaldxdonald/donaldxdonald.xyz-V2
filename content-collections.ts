@@ -1,8 +1,8 @@
-import { defineCollection, defineConfig, z as zod } from "@content-collections/core"
-import { remark } from "remark"
-import stripMarkdown from "strip-markdown"
-import { TOCItem, fillWithTOC } from "./lib/remark"
-import { compileMDX } from "./lib/mdx"
+import { defineCollection, defineConfig, z as zod } from '@content-collections/core'
+import { remark } from 'remark'
+import stripMarkdown from 'strip-markdown'
+import { TOCItem, fillWithTOC } from './lib/remark'
+import { compileMDX } from './lib/mdx'
 
 const strip = (content: string) => {
   const vFile = remark()

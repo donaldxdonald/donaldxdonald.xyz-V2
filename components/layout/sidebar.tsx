@@ -1,10 +1,10 @@
 'use client'
 
-import { Rss } from "lucide-react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { ComponentProps } from "react"
-import { SocialLinks } from "../../lib/constants"
+import { Rss } from 'lucide-react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { ComponentProps } from 'react'
+import { SocialLinks } from '../../lib/constants'
 
 export default function Sidebar({ className }: ComponentProps<'aside'>) {
   const pathSegments = usePathname().split('/')

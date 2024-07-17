@@ -1,7 +1,7 @@
 'use client'
 
-import Sidebar from "@/components/layout/sidebar"
-import { SearchContext } from "../../components/SearchContext"
+import Sidebar from '@/components/layout/sidebar'
+import { SearchContext } from '../../components/SearchContext'
 
 export default function ProseLayout({ children }: {
   children: React.ReactNode

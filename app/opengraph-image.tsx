@@ -1,5 +1,5 @@
-import { ImageResponse } from "next/og"
-export const runtime = "edge"
+import { ImageResponse } from 'next/og'
+export const runtime = 'edge'
 
 export default async function og() {
   const fontJost = await fetch(
@@ -15,7 +15,7 @@ export default async function og() {
         tw="relative w-full h-full bg-white flex items-center justify-center bg-indigo-100 text-slate-800"
         style={{
           fontFamily: 'Jost',
-          backgroundImage: `url("https://donaldxdonald.xyz/noise.png")`,
+          backgroundImage: 'url("https://donaldxdonald.xyz/noise.png")',
         }}
       >
         <span tw="absolute right-10 top-10 text-4xl">blog / weekly</span>

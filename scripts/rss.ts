@@ -53,7 +53,7 @@ async function buildBlogRSS() {
     title: 'Donald x Blog',
     id: 'https://donaldxdonald.xyz/blog',
     link: 'https://donaldxdonald.xyz/blog',
-    description: `It's all about Donald Mok's Blog`,
+    description: 'It\'s all about Donald Mok\'s Blog',
   }
 
   const posts: Item[] = (await Promise.all(
@@ -87,7 +87,7 @@ async function buildWeeklyRSS() {
     title: 'Donald x Weekly',
     id: 'https://donaldxdonald.xyz/weekly',
     link: 'https://donaldxdonald.xyz/weekly',
-    description: `What a Donald Mok's week!`,
+    description: 'What a Donald Mok\'s week!',
   }
 
   const posts: Item[] = (await Promise.all(

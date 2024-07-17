@@ -16,14 +16,14 @@ export const getWeeklies = () => getPagesByName('Weekly')
 
 const getPagesByName = (folderName: 'Blog' | 'Weekly') => {
   const result: Post[] = []
-  const folder = pageTree.children.find(v => v.name === folderName && v.type === 'folder') as Exclude<(typeof pageTree.children)[0], {type: 'page' | 'separator'}>
+  const folder = pageTree.children.find(v => v.name === folderName && v.type === 'folder') as Exclude<(typeof pageTree.children)[0], { type: 'page' | 'separator' }>
   const children = folder?.children || []
 
   for (const child of children) {
     if (child.type !== 'page') {
       continue
     }
-    const p = child as Exclude<typeof child, {type: 'folder' | 'separator'}>
+    const p = child as Exclude<typeof child, { type: 'folder' | 'separator' }>
     const page = getPage(p.url.split('/').slice(1))
 
     if (page) {

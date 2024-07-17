@@ -3,7 +3,7 @@ import {
   Options as MDXOptions,
 } from '@content-collections/mdx'
 import { Context, Meta } from '@content-collections/core'
-import remarkGfm from "remark-gfm"
+import remarkGfm from 'remark-gfm'
 import { remarkHeading } from 'fumadocs-core/mdx-plugins'
 import rehypeShiki from '@shikijs/rehype'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'

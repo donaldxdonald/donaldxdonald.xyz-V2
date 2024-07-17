@@ -1,7 +1,7 @@
 import { Command } from 'cmdk'
 import { Post } from 'content-collections'
 import { useRouter } from 'next/navigation'
-import { FC, useEffect, useState } from "react"
+import { FC, useEffect, useState } from 'react'
 import { SocialLinks } from '../lib/constants'
 import { useDocsSearch } from '../lib/search/client'
 import { SortedResult } from '../lib/search/shared'
