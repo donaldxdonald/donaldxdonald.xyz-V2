@@ -12,6 +12,7 @@ export default dndxdnd([
     rules: {
       ...fixupPluginRules(nextPlugin).configs['core-web-vitals']['rules'],
       'import/no-default-export': 'off',
+      '@stylistic/object-curly-spacing': 'off',
     },
   },
 ])

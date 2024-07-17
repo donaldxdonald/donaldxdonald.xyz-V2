@@ -1,12 +1,17 @@
-import Post from '@/components/layout/post'
-import { allWeeklies } from 'contentlayer/generated'
 import { Metadata } from 'next'
+import Post from '@/components/layout/post'
+import { getPage } from '../../../source'
 
 export async function generateMetadata({
   params,
-}: {params: {slug: string}}): Promise<Metadata | undefined> {
-  const post = allWeeklies.find(v => v.slug === params.slug)
-  if (!post) {
+}: {
+  params: {
+    slug: string
+  }
+}): Promise<Metadata | undefined> {
+  const postData = getPage([params.slug])
+
+  if (!postData) {
     return
   }
 
@@ -16,7 +21,7 @@ export async function generateMetadata({
     image,
     date,
     slug,
-  } = post
+  } = postData.data
   const url = `https://donaldxdonald.xyz/weekly/${slug}`
   const ogImage = image || `https://donaldxdonald.xyz/og?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}`
 
@@ -43,10 +48,15 @@ export async function generateMetadata({
   }
 }
 
-export default function PostPage({ params }: {params: {slug: string}}) {
-  const post = allWeeklies.find(v => v.slug === params.slug)
+export default function PostPage({ params }: {
+  params: {
+    slug: string
+  }
+}) {
+  const postData = getPage(['weekly', params.slug])
+  const post = postData?.data
 
   return (
-    <Post post={post}></Post>
+    post ? <Post post={post}></Post> : null
   )
 }

@@ -1,5 +1,6 @@
 import { writeFile } from 'fs/promises'
-import { join } from 'path'
+import { dirname, join } from 'path'
+import { fileURLToPath } from 'url'
 import { Author, Feed, FeedOptions, Item } from 'feed'
 import { remark } from 'remark'
 import remarkFrontmatter from 'remark-frontmatter'
@@ -10,6 +11,8 @@ import { read } from 'to-vfile'
 import { matter } from 'vfile-matter'
 import { fdir } from 'fdir'
 import type { Plugin } from 'unified'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export const customFrontMatterPlugin: Plugin = () => {
   return (_, file) => {
@@ -45,7 +48,6 @@ const contentCrawler = new fdir({
 
 async function buildBlogRSS() {
   const files = await contentCrawler.crawl(join(__dirname, '../content/blog')).withPromise()
-  console.log('files', files)
   const options: FeedOptions = {
     copyright: COPY_RIGHT,
     title: 'Donald x Blog',

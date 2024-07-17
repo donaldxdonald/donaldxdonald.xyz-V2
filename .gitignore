@@ -39,6 +39,7 @@ next-env.d.ts
 # misc
 .vscode
 .contentlayer
+.content-collections
 
 /public/*.atom
 /public/*.json
