@@ -5,7 +5,7 @@ date: 2022-03-20 14:42
 
 ## 前言
 
-去年写了篇[文章](https://donaldxdonald.xyz/post/programming/interesting/aboutpublishingonnpm)记录了用 [pnpm](https://pnpm.io/) 管理自己 ESLint 规则的 Monorepo，但也仅仅是只用到了 pnpm 的 workspace 功能来管理而已，但是管理发布版本的问题仍然没解决，之前都是要手动改 `package.json` 的版本号再 publish，这显然太麻烦了。简单了解了数个 monorepo 的工具库，感觉 [changesets](https://github.com/changesets/changesets) 就挺简单纯粹的，可以用于改造自己 ESLint 配置的[项目](https://github.com/donaldxdonald/eslint-config)。
+去年写了篇[文章](https://donaldxdonald.xyz/blog/AboutPublishingOnNPM)记录了用 [pnpm](https://pnpm.io/) 管理自己 ESLint 规则的 Monorepo，但也仅仅是只用到了 pnpm 的 workspace 功能来管理而已，但是管理发布版本的问题仍然没解决，之前都是要手动改 `package.json` 的版本号再 publish，这显然太麻烦了。简单了解了数个 monorepo 的工具库，感觉 [changesets](https://github.com/changesets/changesets) 就挺简单纯粹的，可以用于改造自己 ESLint 配置的[项目](https://github.com/donaldxdonald/eslint-config)。
 
 ## 介绍
 
