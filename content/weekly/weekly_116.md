@@ -1,6 +1,6 @@
 ---
 title: '#116: Building PC game UIs using React'
-date: 2024-09-17 23:47
+date: 2024-09-18 00:58
 ---
 
 
@@ -10,6 +10,7 @@ date: 2024-09-17 23:47
 - [OpenAI 发布首款具有推理能力 o1 系列模型](https://openai.com/index/introducing-openai-o1-preview/)，可“思考”后自我核实答案正确性，减少“幻觉”。
 - ChatGPT 网页[从 Next.js 迁移到了 Remix](https://x.com/ryanflorence/status/1831379475654947233) 。
 - [经典 Node.js Web 框架 Express 终于发布 5.0 正式版了。](https://github.com/expressjs/express/releases/tag/v5.0.0)（5.0 的第一个 alpha 版实在 2014 年发布的
+- [Node.js 作者 Ryan Dahl 和 JavaScript 之父 Brendan Eich 等人牵头写了一封公开信](https://javascript.tm/)，敦促甲骨文公司放弃对 JavaScript 商标的控制。
 
 ## 有趣
 
