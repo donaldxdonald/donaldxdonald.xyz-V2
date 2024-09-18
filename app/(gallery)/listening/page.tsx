@@ -1,9 +1,27 @@
 import Tracks from 'content/json/tracks.json'
 import { CSSProperties } from 'react'
+import { Metadata } from 'next'
 import { Track } from './type'
 
 const gridLayout: CSSProperties = {
   gridTemplateColumns: 'repeat(auto-fit, minmax(12em, 1fr))',
+}
+
+const title = 'I\'m listening...'
+const description = 'What\'s on my Spotify'
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+  },
+  twitter: {
+    title,
+    description,
+    card: 'summary_large_image',
+  },
 }
 
 export default function ListeningPage() {
