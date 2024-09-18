@@ -10,7 +10,7 @@ export async function generateMetadata({
     slug: string
   }
 }): Promise<Metadata | undefined> {
-  const postData = getPage([params.slug])
+  const postData = getPage([`blog/${params.slug}`])
   if (!postData) {
     return
   }

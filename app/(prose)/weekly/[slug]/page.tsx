@@ -9,7 +9,7 @@ export async function generateMetadata({
     slug: string
   }
 }): Promise<Metadata | undefined> {
-  const postData = getPage([params.slug])
+  const postData = getPage([`weekly/${params.slug}`])
 
   if (!postData) {
     return
