@@ -21,18 +21,18 @@ export async function GET(req: NextRequest) {
       <div
         tw="relative w-full h-full bg-white flex items-end bg-indigo-100 text-slate-800"
         style={{
-          fontFamily: '"Noto Serif", system-ui, sans-serif',
+          fontFamily: '"Noto Serif", ui-serif, system-ui, serif',
           backgroundImage: 'url("https://donaldxdonald.xyz/noise.png")',
         }}
       >
-        <span tw="absolute left-20 top-20 text-4xl">@donaldxdonald</span>
-        <span tw="absolute right-20 top-20 text-4xl">{dayjs(date).format('YYYY-MM-DD')}</span>
-        <h1 tw="mx-20 mb-20 text-7xl tracking-tighter">{decodeURIComponent(title)}</h1>
+        <span tw="absolute left-10 top-10 text-xl">@donaldxdonald</span>
+        <span tw="absolute right-10 top-10 text-xl">{dayjs(date).format('YYYY-MM-DD')}</span>
+        <h1 tw="mx-10 mb-10 text-4xl tracking-tighter">{decodeURIComponent(title)}</h1>
       </div>
     ),
     {
-      width: 1200,
-      height: 630,
+      width: 600,
+      height: 315,
       fonts: [
         {
           name: 'Noto Serif',
