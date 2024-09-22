@@ -25,8 +25,8 @@ export async function GET(req: NextRequest) {
           backgroundImage: 'url("https://donaldxdonald.xyz/noise.png")',
         }}
       >
-        <span tw="absolute left-10 top-10 text-xl">@donaldxdonald</span>
-        <span tw="absolute right-10 top-10 text-xl">{dayjs(date).format('YYYY-MM-DD')}</span>
+        <span tw="absolute left-10 top-6 text-xl">@donaldxdonald</span>
+        <span tw="absolute right-10 top-6 text-xl">{dayjs(date).format('YYYY-MM-DD')}</span>
         <h1 tw="mx-10 mb-10 text-4xl tracking-tighter">{decodeURIComponent(title)}</h1>
       </div>
     ),
