@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Tokenizer, create, insertMultiple } from '@orama/orama'
-import { Position, SearchResultWithHighlight, afterInsert, searchWithHighlight } from '@orama/plugin-match-highlight'
+import { InternalTypedDocument, Results, Tokenizer, create, insertMultiple, search } from '@orama/orama'
+import { Position, Highlight } from '@orama/highlight'
 import { SortedResult } from './shared'
 
 export interface AdvancedIndex {
@@ -73,7 +73,7 @@ export function createSearchAPI(
 export async function initSearchAPIAdvanced({
   indexes,
 }: AdvancedOptions): Promise<SearchAPI> {
-  const db = await create({
+  const db = create({
     schema: {
       title: 'string',
       content: 'string',
@@ -82,30 +82,29 @@ export async function initSearchAPIAdvanced({
     components: {
       tokenizer: chineseTokenizer,
     },
-    plugins: [
-      {
-        name: 'highlight',
-        afterInsert: afterInsert,
-      },
-    ],
   })
 
   await insertMultiple(db, indexes as never[])
+  const highlighter = new Highlight({
+    HTMLTag: 'mark',
+    CSSClass: 'search-highlight',
+  })
 
   return createSearch(async query => {
-    const results = (await searchWithHighlight(db, {
+    const results = (await search(db, {
       term: query,
-    })) as SearchResultWithHighlight<AdvancedIndex>
+    })) as Results<InternalTypedDocument<AdvancedIndex>>
 
     const handledResults: SortedResult[] = []
     results.hits.forEach(r => {
       const p = r.document
       let resultForLink: SortedResult | undefined = undefined
       for (const k of ['content', 'title']) {
-        const v = r.positions[k]
-        for (const positions of Object.values(v)) {
-          if (positions.length === 0) continue
-          resultForLink = handleRange(p, k as keyof AdvancedIndex, positions[0])
+        const v = r.document[k]
+        const highlighted = highlighter.highlight(v, query)
+        for (const position of highlighted.positions) {
+          if (!position) continue
+          resultForLink = handleRange(p, k as keyof AdvancedIndex, position)
           break
         }
         if (resultForLink) break
@@ -122,7 +121,7 @@ function handleRange(item: AdvancedIndex, key: keyof AdvancedIndex, range: Posit
   const target = item[key] || ''
 
   const start = range.start
-  const end = Math.min(range.start + range.length + 100, target.length)
+  const end = Math.min(range.end + 100, target.length)
   return {
     type: 'page',
     content: item.content,

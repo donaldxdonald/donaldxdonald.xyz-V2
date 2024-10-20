@@ -1,8 +1,8 @@
 'use client'
 
-import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import ArrowLeft from '~icons/line-md/arrow-left.jsx'
 
 export const TOC = ({ tableOfContents, hrefPrefix }: { tableOfContents: { depth: number; text: string; slug: string }[]; hrefPrefix: string }) => {
   const router = useRouter()

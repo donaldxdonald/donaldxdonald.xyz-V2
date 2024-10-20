@@ -25,7 +25,9 @@
       "@/styles/*": [
         "styles/*"
       ],
-      "content-collections": ["./.content-collections/generated"]
+      "content-collections": [
+        "./.content-collections/generated"
+      ]
     },
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -41,6 +43,9 @@
       {
         "name": "next"
       }
+    ],
+    "types": [
+      "unplugin-icons/types/react"
     ]
   },
   "include": [

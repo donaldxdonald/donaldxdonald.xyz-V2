@@ -1,4 +1,6 @@
 import { Config } from 'tailwindcss'
+import typography from '@tailwindcss/typography'
+
 const config: Config = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   future: {
@@ -63,7 +65,7 @@ const config: Config = {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    typography,
   ],
 }
 

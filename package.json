@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"content-collections watch\" \"next dev\"",
+    "dev": "next dev",
     "build": "pnpm run gen:data && pnpm run build:only",
     "build:only": "next build",
     "gen:data": "pnpm run gen:rss && pnpm run gen:tracks",
@@ -25,8 +25,8 @@
     "@fontsource/jost": "^5.1.1",
     "@fontsource/noto-serif": "^5.1.0",
     "@fumadocs/content-collections": "^1.1.4",
+    "@orama/highlight": "^0.1.6",
     "@orama/orama": "^3.0.1",
-    "@orama/plugin-match-highlight": "^3.0.0",
     "@spotify/web-api-ts-sdk": "^1.2.0",
     "@uidotdev/usehooks": "^2.4.1",
     "@vercel/analytics": "^1.3.1",
@@ -36,7 +36,6 @@
     "dayjs": "^1.11.13",
     "feed": "^4.2.2",
     "github-slugger": "^2.0.0",
-    "lucide-react": "0.453.0",
     "mdast-util-to-string": "^4.0.0",
     "next": "^14.2.15",
     "react": "^18.3.1",
@@ -63,8 +62,12 @@
     "@dotenvx/dotenvx": "^1.20.0",
     "@eslint-react/eslint-plugin": "^1.15.0",
     "@eslint/compat": "^1.2.1",
+    "@iconify-json/line-md": "^1.2.2",
+    "@iconify-json/mdi": "^1.2.1",
     "@next/eslint-plugin-next": "^14.2.15",
     "@shikijs/rehype": "^1.22.0",
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.15",
     "@types/diacritics": "^1.3.3",
@@ -77,6 +80,7 @@
     "concurrently": "^9.0.1",
     "diacritics": "^1.3.0",
     "eslint": "^9.13.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.13",
     "fdir": "^6.4.2",
@@ -85,7 +89,9 @@
     "postcss": "^8.4.47",
     "simple-git-hooks": "^2.11.1",
     "tailwindcss": "^3.4.14",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "unplugin-icons": "^0.19.3",
+    "unstorage": "^1.12.0"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"

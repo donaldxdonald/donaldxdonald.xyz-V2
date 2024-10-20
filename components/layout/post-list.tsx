@@ -31,7 +31,7 @@ export default function PostList({ list }: { list: Post[] }) {
                     <Link
                       href={post.url}
                       className="animate-fade-up opacity-0 px-5 tracking-tight py-3 flex justify-between text-lg w-full rounded-md text-slate-600 hover:text-purple-800 hover:bg-purple-100"
-                      style={{ animationDelay: `${i * 0.05}s`, animationFillMode: 'forwards' }}
+                      style={{ animationDelay: `${i * 0.03}s`, animationFillMode: 'forwards' }}
                     >
                       <span className="flex-1 max-w-[80%] truncate">{ post.title }</span>
                       <span className="text-sm text-gray-400 font-mono">{ dayjs(post.date).format('YYYY-MM-DD') }</span>
