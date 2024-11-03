@@ -2,6 +2,12 @@ import { Metadata } from 'next'
 import Post from '@/components/layout/post'
 import { getPage } from '../../../source'
 
+function fixSlug(slug: string) {
+  return slug.startsWith('weekly_')
+    ? slug.replace('weekly_', 'weekly-')
+    : slug
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -9,7 +15,9 @@ export async function generateMetadata({
     slug: string
   }
 }): Promise<Metadata | undefined> {
-  const postData = getPage([`weekly/${params.slug}`])
+  const fileName = fixSlug(params.slug)
+
+  const postData = getPage([`weekly/${fileName}`])
 
   if (!postData) {
     return
@@ -53,7 +61,7 @@ export default function PostPage({ params }: {
     slug: string
   }
 }) {
-  const postData = getPage(['weekly', params.slug])
+  const postData = getPage(['weekly', fixSlug(params.slug)])
   const post = postData?.data
 
   return (
