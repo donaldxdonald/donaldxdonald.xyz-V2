@@ -1,6 +1,6 @@
-import { Post, allPosts } from 'content-collections'
 import { createMDXSource } from '@fumadocs/content-collections'
 import { loader } from 'fumadocs-core/source'
+import { Post, allPosts } from 'content-collections'
 
 export const { getPage, getPages, pageTree } = loader({
   baseUrl: '/',

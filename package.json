@@ -83,7 +83,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
     "fdir": "^6.4.2",
-    "fumadocs-core": "^13.4.10",
+    "fumadocs-core": "^14.2.1",
     "lint-staged": "^15.2.10",
     "postcss": "^8.4.47",
     "simple-git-hooks": "^2.11.1",
