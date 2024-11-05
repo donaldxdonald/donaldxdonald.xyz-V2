@@ -2,8 +2,8 @@ import dayjs from 'dayjs'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import Balancer from 'react-wrap-balancer'
-import { Post as PostType } from 'content-collections'
 import { useMDXComponent } from '@content-collections/mdx/react'
+import { Post as PostType } from 'content-collections'
 
 export default function Post({ post }: {
   post: PostType

@@ -5,6 +5,9 @@ import nextPlugin from '@next/eslint-plugin-next'
 
 export default dndxdnd([
   {
+    ignores: ['**/.content-collections'],
+  },
+  {
     files: [GLOB_TS, GLOB_TSX],
     plugins: {
       '@next/next': nextPlugin,

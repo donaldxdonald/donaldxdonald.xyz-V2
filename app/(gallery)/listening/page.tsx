@@ -1,6 +1,6 @@
-import Tracks from 'content/json/tracks.json'
 import { CSSProperties } from 'react'
 import { Metadata } from 'next'
+import Tracks from 'content/json/tracks.json'
 import { Track } from './type'
 
 const gridLayout: CSSProperties = {

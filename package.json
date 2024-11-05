@@ -9,7 +9,7 @@
     "gen:data": "pnpm run gen:rss && pnpm run gen:tracks",
     "gen:rss": "tsx ./scripts/rss.ts",
     "gen:tracks": "tsx ./scripts/tracks.ts",
-    "format": "eslint \"**/*.{js,jsx,ts,tsx}\"",
+    "format": "eslint \"**/*.{js,jsx,ts,tsx,css,scss}\"",
     "start": "next start",
     "lint": "pnpm run format",
     "prepare": "npx simple-git-hooks"

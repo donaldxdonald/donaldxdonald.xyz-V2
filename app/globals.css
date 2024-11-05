@@ -1,12 +1,12 @@
-@import url("../assets/styles/md.css");
-@import url("../assets/styles/cmdk-tokens.css");
+@import url('../assets/styles/md.css');
+@import url('../assets/styles/cmdk-tokens.css');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  background-image: url("/noise.png");
+  background-image: url('/noise.png');
 }
 
 html {

@@ -138,7 +138,7 @@ async function main() {
 function extractLinkFromPath(path: string) {
   return path
     .toLowerCase()
-    .replace(/.*?content(.*?)\.md(x?)/, '$1')
+    .replace(/.*?content(.*?)\.mdx?/, '$1')
 }
 
 main()
