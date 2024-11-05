@@ -4,7 +4,6 @@ import Icons from 'unplugin-icons/webpack'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     domains: [
       'cdn.donaldxdonald.xyz',

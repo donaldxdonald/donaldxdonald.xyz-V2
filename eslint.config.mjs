@@ -15,4 +15,8 @@ export default dndxdnd([
       'react/no-array-index-key': 'off',
     },
   },
-])
+], {
+  formatters: {
+    scss: true,
+  },
+})

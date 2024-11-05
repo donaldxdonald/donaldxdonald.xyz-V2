@@ -148,7 +148,7 @@
     will-change: background, color;
     transition: all 150ms ease;
     transition-property: none;
-    
+
     &.vertical {
       --padding-block-start: 3px;
       flex-direction: column;
@@ -322,7 +322,6 @@
       background: var(--gray2);
     }
   }
-
 
   [cmdk-empty] {
     font-size: 14px;

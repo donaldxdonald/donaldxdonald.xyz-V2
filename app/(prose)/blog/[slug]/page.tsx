@@ -3,13 +3,14 @@ import Post from '@/components/layout/post'
 import { getPage } from '@/app/source'
 import { TOC } from '../../../../components/mdx/TOC'
 
-export async function generateMetadata({
-  params,
-}: {
-  params: {
-    slug: string
-  }
-}): Promise<Metadata | undefined> {
+export async function generateMetadata(
+  props: {
+    params: Promise<{
+      slug: string
+    }>
+  },
+): Promise<Metadata | undefined> {
+  const params = await props.params
   const postData = getPage([`blog/${params.slug}`])
   if (!postData) {
     return
@@ -48,11 +49,14 @@ export async function generateMetadata({
   }
 }
 
-export default function PostPage({ params }: {
-  params: {
-    slug: string
-  }
-}) {
+export default async function PostPage(
+  props: {
+    params: Promise<{
+      slug: string
+    }>
+  },
+) {
+  const params = await props.params
   const postData = getPage(['blog', params.slug])
   const post = postData?.data
 

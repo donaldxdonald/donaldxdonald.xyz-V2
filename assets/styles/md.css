@@ -1,5 +1,4 @@
-
-code[class*=language-] {
+code[class*='language-'] {
   @apply font-mono;
 }
 
@@ -22,12 +21,15 @@ code[class*=language-] {
   @apply text-lg font-medium mt-10;
 }
 
-:is(.prose) h1, h2, h3 {
+:is(.prose) h1,
+h2,
+h3 {
   @apply relative font-serif;
 }
 
-.prose code::before, .prose code::after {
-  display: none
+.prose code::before,
+.prose code::after {
+  display: none;
 }
 
 .prose :is(p, li) > a {
@@ -38,12 +40,11 @@ code[class*=language-] {
   @apply border-dashed border-b-theme border-b-2 no-underline;
 }
 
-
 .prose :is(ol, ul) li {
   @apply font-normal;
 }
 
-.prose :where(code):not(:where([class~="not-prose"] *)) {
+.prose :where(code):not(:where([class~='not-prose'] *)) {
   font-weight: normal !important;
   @apply rounded py-1 px-2 bg-gray-200;
 }
@@ -56,7 +57,7 @@ code[class*=language-] {
   @apply absolute -left-4 top-0 opacity-0 text-indigo-900 font-bold no-underline;
 }
 
-.prose :is(h1,h2,h3):hover .header-anchor {
+.prose :is(h1, h2, h3):hover .header-anchor {
   @apply opacity-50;
 }
 
