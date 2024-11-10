@@ -20,7 +20,7 @@ export default function Post({ post }: {
         <Balancer>{post.title}</Balancer>
       </h1>
       <span className="text-md text-gray-400 my-3 py-2 border-t border-purple-900 w-fit font-mono">
-        {dayjs(post.date).format('YYYY-MM-DD hh:mm')}
+        {dayjs(post.date).format('YYYY-MM-DD HH:mm')}
         {' '}
         | (
         <Link className="hover:underline" target="__blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">license</Link>

@@ -39,7 +39,7 @@ async function main() {
 
   const spotifyClient = SpotifyApi.withAccessToken(cId!, tokenData)
 
-  const tracksRes = (await spotifyClient.currentUser.topItems('tracks', 'short_term')) as Page<SpotifyTrack>
+  const tracksRes = (await spotifyClient.currentUser.topItems('tracks', 'medium_term')) as Page<SpotifyTrack>
 
   const artists = tracksRes.items.map((d): Track => {
     return {
