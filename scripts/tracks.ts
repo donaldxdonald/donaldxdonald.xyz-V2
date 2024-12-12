@@ -5,11 +5,11 @@
 import { Buffer } from 'node:buffer'
 import fs from 'node:fs/promises'
 import process from 'node:process'
-import { configDotenv } from '@dotenvx/dotenvx'
+import { config } from '@dotenvx/dotenvx'
 import { AccessToken, Page, SpotifyApi, Track as SpotifyTrack } from '@spotify/web-api-ts-sdk'
 import { Track } from '../app/(gallery)/listening/type'
 
-configDotenv()
+config()
 
 const ref = process.env.SPOT_R_TOKEN
 const cId = process.env.SPOT_C_ID
