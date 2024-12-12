@@ -1,6 +1,6 @@
 'use client'
 import dayjs from 'dayjs'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import { Post } from 'content-collections'
 import { groupBy } from '../../lib/utils'
 

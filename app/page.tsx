@@ -1,5 +1,5 @@
 import { Viewport } from 'next'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import { Fragment } from 'react'
 import Balancer from 'react-wrap-balancer'
 import { MONOLOGUE, SocialLinks } from '../lib/constants'

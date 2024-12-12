@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import { useRouter } from 'next/navigation'
 import ArrowLeft from '~icons/line-md/arrow-left.jsx'
 

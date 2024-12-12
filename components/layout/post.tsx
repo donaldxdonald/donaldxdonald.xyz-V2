@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import { notFound } from 'next/navigation'
 import Balancer from 'react-wrap-balancer'
 import { useMDXComponent } from '@content-collections/mdx/react'
