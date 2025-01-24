@@ -1,5 +1,5 @@
-import { useDebounce } from '@uidotdev/usehooks'
 import { useEffect, useState } from 'react'
+import { useDebouncedValue } from 'foxact/use-debounced-value'
 import { SortedResult } from './shared'
 
 async function fetchDocs(api: string, query: string) {
@@ -13,7 +13,7 @@ async function fetchDocs(api: string, query: string) {
 
 export const useDocsSearch = (api = '/api/search') => {
   const [search, setSearch] = useState('')
-  const debouncedValue = useDebounce(search, 100)
+  const debouncedValue = useDebouncedValue(search, 100)
   const [results, setResults] = useState<SortedResult[]>([])
 
   useEffect(() => {
