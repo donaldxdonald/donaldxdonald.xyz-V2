@@ -1,5 +1,5 @@
 ---
-title: "# #133: Move on to ESM-only"
+title: "#133: Move on to ESM-only"
 date: 2025-02-16 23:45
 ---
 
