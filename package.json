@@ -18,6 +18,7 @@
   "engines": {
     "node": ">=22"
   },
+  "packageManager": "pnpm@10.10.0",
   "engineStrict": true,
   "dependencies": {
     "@content-collections/core": "^0.8.2",
