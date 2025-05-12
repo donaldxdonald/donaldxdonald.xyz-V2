@@ -1,20 +1,6 @@
 import { Viewport } from 'next'
-import { Link } from 'next-view-transitions'
-import { Fragment } from 'react'
-import Balancer from 'react-wrap-balancer'
-import { MONOLOGUE, SocialLinks } from '../lib/constants'
-
-const wordMap: Record<number, { route: string }> = {
-  16: {
-    route: '/listening',
-  },
-  21: {
-    route: '/blog',
-  },
-  24: {
-    route: '/weekly',
-  },
-}
+import { AnimatedMonoLogue } from '@/components/AnimatedMonologue'
+import { SocialLinks } from '../lib/constants'
 
 export const viewport: Viewport = {
   themeColor: '#faf5ff',
@@ -23,31 +9,7 @@ export const viewport: Viewport = {
 export default async function Home() {
   return (
     <div className="z-10 max-w-2xl py-32 flex flex-col justify-center">
-      <p
-        className="animate-fade-up text-center mb-20 opacity-0 text-3xl md:text-5xl !leading-normal font-light font-display tracking-tighter"
-        style={{ animationDelay: '500ms', animationFillMode: 'forwards' }}
-      >
-        <Balancer>
-          {
-            MONOLOGUE.split(' ')
-              .map((word, index) => (
-                <Fragment key={word + index}>
-                  {
-                    wordMap[index]
-                      ? <Link className="decoration-purple-300 underline hover:text-slate-500" href={wordMap[index].route}>{word}</Link>
-                      : (
-                        <span>
-                          {' '}
-                          {word}
-                          {' '}
-                        </span>
-                      )
-                  }
-                </Fragment>
-              ))
-          }
-        </Balancer>
-      </p>
+      <AnimatedMonoLogue></AnimatedMonoLogue>
       <ul className="flex items-center justify-center">
         {
           SocialLinks.map((item, index) => (
