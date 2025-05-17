@@ -1,4 +1,7 @@
 import { RehypeShikiOptions } from '@shikijs/rehype'
+import { Element } from 'hast'
+import { Transformer } from 'unified'
+import { visit } from 'unist-util-visit'
 
 export const shikiOptions: RehypeShikiOptions = {
   theme: 'rose-pine-moon',
@@ -22,4 +25,14 @@ export const shikiOptions: RehypeShikiOptions = {
       },
     },
   ],
+}
+
+export const rehypeLinkNewWindow = (): Transformer => tree => {
+  visit(tree, 'element', n => {
+    const node = n as Element
+    if (node.tagName === 'a' && node.properties?.href) {
+      node.properties.target = '_blank'
+      node.properties.rel = 'noopener noreferrer'
+    }
+  })
 }

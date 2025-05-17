@@ -7,7 +7,7 @@ import remarkGfm from 'remark-gfm'
 import { remarkHeading } from 'fumadocs-core/mdx-plugins'
 import rehypeShiki from '@shikijs/rehype'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import { shikiOptions } from './rehype'
+import { rehypeLinkNewWindow, shikiOptions } from './rehype'
 
 export function compileMDX(doc: {
   _meta: Meta
@@ -34,6 +34,7 @@ options: MDXOptions = {},
           value: '#',
         },
       }],
+      rehypeLinkNewWindow,
       ...rehypePlugins,
     ],
   })
