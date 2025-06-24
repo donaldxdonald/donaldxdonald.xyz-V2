@@ -38,6 +38,6 @@ date: 2025-06-22 20:13
   
     Redux 负责人 Mark Erikson 记录了 React 生态在 2025 年的状况。
     
-- [Bringing React's <ViewTransition> to vanilla JS](https://plainvanillaweb.com/blog/articles/2025-06-12-view-transitions/)
+- [Bringing React's `<ViewTransition>` to vanilla JS](https://plainvanillaweb.com/blog/articles/2025-06-12-view-transitions/)
   
-    参考 React 的 <ViewTransition> 组件来用 JS 封装 View Transition API 的逻辑。
+    参考 React 的 `<ViewTransition>` 组件来用 JS 封装 View Transition API 的逻辑。
