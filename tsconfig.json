@@ -1,33 +1,17 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/components/*": [
-        "components/*"
-      ],
-      "@/pages/*": [
-        "pages/*"
-      ],
-      "@/app/*": [
-        "app/*"
-      ],
-      "@/lib/*": [
-        "lib/*"
-      ],
-      "@/styles/*": [
-        "styles/*"
-      ],
-      "content-collections": [
-        "./.content-collections/generated"
-      ]
+      "@/components/*": ["components/*"],
+      "@/pages/*": ["pages/*"],
+      "@/app/*": ["app/*"],
+      "@/lib/*": ["lib/*"],
+      "@/styles/*": ["styles/*"],
+      "content-collections": ["./.content-collections/generated"]
     },
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -43,9 +27,6 @@
       {
         "name": "next"
       }
-    ],
-    "types": [
-      "unplugin-icons/types/react"
     ]
   },
   "include": [
@@ -56,7 +37,5 @@
     ".content-collections/generated",
     "*.config.*"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
