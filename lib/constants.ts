@@ -1,18 +1,17 @@
-import Github from '~icons/line-md/github.jsx'
-import TwitterX from '~icons/line-md/twitter-x.jsx'
-import Mail from '~icons/line-md/email.jsx'
+import { SiGithub, SiX } from '@icons-pack/react-simple-icons'
+import { Mail } from 'lucide-react'
 
 export const MONOLOGUE = 'I am Donald Mok, showcasing my creations on this website. Sharing programming and enjoying photography, film, music and video games. Writing blogs occasionally and weekly posts consistently.'
 
 export const SocialLinks = [
   {
-    icon: TwitterX,
+    icon: SiX,
     text: '@donaldxdonald',
     link: '/twitter',
     desc: 'Twitter / X',
   },
   {
-    icon: Github,
+    icon: SiGithub,
     text: '@donaldxdonald',
     link: '/github',
     desc: 'Github',

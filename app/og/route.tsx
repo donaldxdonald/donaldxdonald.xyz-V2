@@ -1,6 +1,6 @@
-import dayjs from 'dayjs'
 import { ImageResponse } from 'next/og'
 import { NextRequest } from 'next/server'
+import { format } from 'date-fns'
 
 export const runtime = 'edge'
 
@@ -26,7 +26,7 @@ export async function GET(req: NextRequest) {
         }}
       >
         <span tw="absolute left-10 top-6 text-xl">@donaldxdonald</span>
-        <span tw="absolute right-10 top-6 text-xl">{dayjs(date).format('YYYY-MM-DD')}</span>
+        <span tw="absolute right-10 top-6 text-xl">{format(date, 'yyyy-MM-dd')}</span>
         <h1 tw="mx-10 mb-10 text-4xl tracking-tighter">{decodeURIComponent(title)}</h1>
       </div>
     ),

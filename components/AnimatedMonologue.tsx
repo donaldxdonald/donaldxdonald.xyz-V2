@@ -19,7 +19,9 @@ const wordMap: Record<number, { route: string }> = {
 export const AnimatedMonoLogue = () => {
   return (
     <TextEffect
-      preset="slide"
+      preset="fade-in-blur"
+      speedReveal={3}
+      speedSegment={1.2}
       className="text-center mb-20 opacity-0 text-3xl md:text-5xl !leading-normal font-light font-display tracking-tighter"
       renderSegment={(segment, index) => (
         wordMap[index]

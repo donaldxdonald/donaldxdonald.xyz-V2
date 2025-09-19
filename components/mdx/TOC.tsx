@@ -2,7 +2,7 @@
 
 import { Link } from 'next-view-transitions'
 import { useRouter } from 'next/navigation'
-import ArrowLeft from '~icons/line-md/arrow-left.jsx'
+import { ArrowLeft } from 'lucide-react'
 
 export const TOC = ({ tableOfContents, hrefPrefix }: { tableOfContents: { depth: number; text: string; slug: string }[]; hrefPrefix: string }) => {
   const router = useRouter()
