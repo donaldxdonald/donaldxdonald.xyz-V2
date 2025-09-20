@@ -29,7 +29,7 @@ export default function PostList({ list }: { list: Post[] }) {
               <motion.ul>
                 {
                   sortedList.map((post, i) => (
-                    <motion.li key={post._meta.filePath} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0, transition: { type: 'spring', delay: i * 0.05 } }}>
+                    <motion.li key={post._meta.filePath} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0, transition: { type: 'spring', delay: i * 0.02 } }}>
                       <Link
                         href={post.url}
                         className="px-5 tracking-tight py-3 flex justify-between text-lg w-full rounded-md text-slate-600 hover:text-purple-800 hover:bg-purple-100"
