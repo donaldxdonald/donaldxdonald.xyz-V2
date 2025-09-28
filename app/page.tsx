@@ -8,7 +8,7 @@ export const viewport: Viewport = {
 
 export default async function Home() {
   return (
-    <div className="z-10 max-w-2xl py-32 flex flex-col justify-center">
+    <div className="z-10 max-w-2xl py-32 px-4 md:px-0 flex flex-col justify-center">
       <AnimatedMonoLogue></AnimatedMonoLogue>
       <ul className="flex items-center justify-center">
         {

@@ -15,7 +15,7 @@ export default function Post({ post }: {
   const MDX = useMDXComponent(post.mdx)
 
   return (
-    <section className="flex flex-col mt-16 mb-56">
+    <section className="flex flex-col mt-6 md:mt-16 mb-56">
       <h1 className="font-bold text-4xl font-serif tracking-tighter mt-5">
         <Balancer>{post.title}</Balancer>
       </h1>

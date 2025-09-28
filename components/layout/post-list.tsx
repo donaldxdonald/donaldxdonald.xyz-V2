@@ -25,17 +25,17 @@ export default function PostList({ list }: { list: Post[] }) {
         {
           groupedSortedList.map(([year, sortedList]) => (
             <div className="mt-3" key={year}>
-              <motion.h2 className="text-4xl opacity-75 font-bold tracking-tighter my-5 ml-5" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{year}</motion.h2>
+              <motion.h2 className="text-3xl md:/text-4xl opacity-75 font-bold tracking-tighter my-5 ml-2 md:ml-5" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>{year}</motion.h2>
               <motion.ul>
                 {
                   sortedList.map((post, i) => (
                     <motion.li key={post._meta.filePath} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0, transition: { type: 'spring', delay: i * 0.02 } }}>
                       <Link
                         href={post.url}
-                        className="px-5 tracking-tight py-3 flex justify-between text-lg w-full rounded-md text-slate-600 hover:text-purple-800 hover:bg-purple-100"
+                        className="px-2 md:px-5 tracking-tight py-3 flex justify-between text-sm md:text-lg w-full rounded-md text-slate-600 hover:text-purple-800 hover:bg-purple-100"
                       >
                         <span className="flex-1 max-w-[80%] truncate">{ post.title }</span>
-                        <span className="text-sm text-gray-400 font-mono">{ format(post.date, 'yyyy-MM-dd') }</span>
+                        <span className="text-xs md:text-sm text-gray-400 font-mono">{ format(post.date, 'yyyy-MM-dd') }</span>
                       </Link>
                     </motion.li>
                   ))
