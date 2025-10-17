@@ -78,7 +78,7 @@ export default function ListeningPage() {
                 initial="hidden"
                 animate="visible"
                 whileHover="hover"
-                whileTap={{ scale: 0.98 }}
+                whileTap={{ scale: 1 }}
                 variants={coverVariants}
               >
                 <img className="aspect-square" src={v.album.image.url} alt={v.name}></img>
@@ -93,6 +93,7 @@ export default function ListeningPage() {
                     {v.name}
                     {' '}
                     -
+                    {' '}
                     {v.authorName}
                   </a>
                 </motion.div>
