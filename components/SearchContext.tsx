@@ -1,10 +1,10 @@
 import { Command } from 'cmdk'
 import { useRouter } from 'next/navigation'
 import { FC, useEffect, useState } from 'react'
-import { Post } from 'content-collections'
 import { SocialLinks } from '../lib/constants'
 import { useDocsSearch } from '../lib/search/client'
 import { SortedResult } from '../lib/search/shared'
+import type { BlogPost, WeeklyPost } from '@/app/source'
 
 type HighlightItem = {
   content: string
@@ -35,7 +35,7 @@ export const SearchContext: FC = () => {
     return () => document.removeEventListener('keydown', keydown)
   }, [])
 
-  function onSelectItem(item: Post | SearchItem | SortedResult) {
+  function onSelectItem(item: BlogPost | WeeklyPost | SearchItem | SortedResult) {
     router.push(`../${item.url}`)
     setOpen(false)
   }

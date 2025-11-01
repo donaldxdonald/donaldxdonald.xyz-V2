@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Post from '@/components/layout/post'
-import { getPage } from '../../../source'
+import { weeklySource } from '../../../source'
 
 function fixSlug(slug: string) {
   return slug.startsWith('weekly_')
@@ -18,7 +18,7 @@ export async function generateMetadata(
   const params = await props.params
   const fileName = fixSlug(params.slug)
 
-  const postData = getPage([`weekly/${fileName}`])
+  const postData = weeklySource.getPage([fileName])
 
   if (!postData) {
     return
@@ -29,9 +29,8 @@ export async function generateMetadata(
     description,
     image,
     date,
-    slug,
   } = postData.data
-  const url = `https://donaldxdonald.xyz/weekly/${slug}`
+  const url = `https://donaldxdonald.xyz/weekly/${fileName}`
   const ogImage = image || `https://donaldxdonald.xyz/og?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}`
 
   return {
@@ -65,10 +64,11 @@ export default async function PostPage(
   },
 ) {
   const params = await props.params
-  const postData = getPage(['weekly', fixSlug(params.slug)])
-  const post = postData?.data
+  const postData = weeklySource.getPage([fixSlug(params.slug)])
 
-  return (
-    post ? <Post post={post}></Post> : null
-  )
+  if (!postData) {
+    return null
+  }
+
+  return <Post page={postData}></Post>
 }

@@ -11,7 +11,7 @@
       "@/app/*": ["app/*"],
       "@/lib/*": ["lib/*"],
       "@/styles/*": ["styles/*"],
-      "content-collections": ["./.content-collections/generated"]
+      "@/.source": ["./.source"]
     },
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".content-collections/generated",
+    ".source/*",
     "*.config.*"
   ],
   "exclude": ["node_modules"]

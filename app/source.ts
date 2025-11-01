@@ -1,35 +1,24 @@
-import { createMDXSource } from '@fumadocs/content-collections'
 import { loader } from 'fumadocs-core/source'
-import { Post, allPosts } from 'content-collections'
+import { blog as blogCollection, weekly as weeklyCollection } from '@/.source'
+import type { InferPageType } from 'fumadocs-core/source'
 
-export const { getPage, getPages, pageTree } = loader({
-  baseUrl: '/',
-  source: createMDXSource(allPosts, []),
-  slugs(info) {
-    return info.flattenedPath.split('/')
-  },
+// Blog loader
+export const blogSource = loader({
+  baseUrl: '/blog',
+  source: blogCollection.toFumadocsSource(),
 })
 
-export const getBlogs = () => getPagesByName('Blog')
+// Weekly loader
+export const weeklySource = loader({
+  baseUrl: '/weekly',
+  source: weeklyCollection.toFumadocsSource(),
+})
 
-export const getWeeklies = () => getPagesByName('Weekly')
+// Export helper functions
+export const getBlogs = () => blogSource.getPages()
 
-const getPagesByName = (folderName: 'Blog' | 'Weekly') => {
-  const result: Post[] = []
-  const folder = pageTree.children.find(v => v.name === folderName && v.type === 'folder') as Exclude<(typeof pageTree.children)[0], { type: 'page' | 'separator' }>
-  const children = folder?.children || []
+export const getWeeklies = () => weeklySource.getPages()
 
-  for (const child of children) {
-    if (child.type !== 'page') {
-      continue
-    }
-    const p = child as Exclude<typeof child, { type: 'folder' | 'separator' }>
-    const page = getPage(p.url.split('/').slice(1))
-
-    if (page) {
-      result.push(page.data)
-    }
-  }
-
-  return result
-}
+// Export types
+export type BlogPost = InferPageType<typeof blogSource>
+export type WeeklyPost = InferPageType<typeof weeklySource>
