@@ -14,7 +14,7 @@ export default function Sidebar({ className }: ComponentProps<'aside'>) {
   const proseType = pathSegments[1]
 
   return (
-    <aside className={`h-screen hidden fixed top-0 md:flex flex-col items-center px-2 py-28 left-[10vw] -translate-x-full xl:left-[50vw] xl:-translate-x-[34rem] ${className}`}>
+    <aside className={`h-screen hidden fixed top-0 md:flex flex-col items-center px-2 py-28 left-[10vw] -translate-x-full xl:left-[50vw] xl:-translate-x-136 ${className}`}>
 
       <MotionLink href="/" className="rounded-md p-2" whileHover={{ scale: 1.5, rotate: 360 }} whileTap={{ scale: 0.9 }}>
         <svg className="w-8 h-8" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

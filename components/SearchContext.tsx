@@ -64,7 +64,7 @@ export const SearchContext: FC = () => {
                       onSelect={() => onSelectItem(item)}
                     >
                       <p className="truncate max-w-[98%]">{item.matched}</p>
-                      <div className="text-xs text-[--gray9] flex items-center justify-between w-full">
+                      <div className="text-xs text-(--gray9) flex items-center justify-between w-full">
                         <p>{item.title}</p>
                         {/* <span className='font-mono'>{item.date.split(' ')[0]}</span> */}
                       </div>

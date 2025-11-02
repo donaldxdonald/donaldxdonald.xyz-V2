@@ -8,8 +8,8 @@ export const TOC = ({ tableOfContents, hrefPrefix }: { tableOfContents: { depth:
   const router = useRouter()
 
   return (
-    <ul className="hidden md:flex flex-col min-w-[7rem] max-w-md">
-      <button type="button" className="w-full flex items-center gap-2 px-3 text-sm rounded hover:bg-purple-100 py-2 mb-3 opacity-30 hover:opacity-100 transition-opacity duration-100" onClick={() => router.back()}>
+    <ul className="hidden md:flex flex-col min-w-28 max-w-md">
+      <button type="button" className="w-full flex items-center gap-2 px-3 text-sm rounded-sm hover:bg-purple-100 py-2 mb-3 opacity-30 hover:opacity-100 transition-opacity duration-100" onClick={() => router.back()}>
         <ArrowLeft className="w-4 h-4"></ArrowLeft>
         <span>返回</span>
       </button>
