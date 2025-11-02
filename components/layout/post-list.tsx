@@ -2,7 +2,7 @@
 import { format, isBefore } from 'date-fns'
 import { Link } from 'next-view-transitions'
 import { AnimatePresence, motion } from 'motion/react'
-import { groupBy } from '../../lib/utils'
+import { groupBy } from 'es-toolkit'
 import type { BlogPost, WeeklyPost } from '@/app/source'
 
 export default function PostList({ list }: { list: (BlogPost | WeeklyPost)[] }) {

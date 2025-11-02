@@ -1,6 +1,6 @@
 ---
 title: '#25: Ten Years of TypeScript'
-date: 2022-10:09 22:22
+date: 2022-10-09 22:22
 ---
 
 ## Article

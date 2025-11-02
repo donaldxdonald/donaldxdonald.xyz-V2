@@ -48,6 +48,9 @@ importers:
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
+      es-toolkit:
+        specifier: ^1.41.0
+        version: 1.41.0
       feed:
         specifier: ^5.0.1
         version: 5.0.1
@@ -1955,6 +1958,9 @@ packages:
   environment@1.1.0:
     resolution: {integrity: sha512-xUtoPkMggbz0MPyPiIWr1Kp4aeWJjDZ6SMvURhimjdZgsRuDplF5/s9hcgGhyXMhs+6vpnuoiZ2kFiu3FMnS8Q==}
     engines: {node: '>=18'}
+
+  es-toolkit@1.41.0:
+    resolution: {integrity: sha512-bDd3oRmbVgqZCJS6WmeQieOrzpl3URcWBUVDXxOELlUW2FuW+0glPOz1n0KnRie+PdyvUZcXz2sOn00c6pPRIA==}
 
   esast-util-from-estree@2.0.0:
     resolution: {integrity: sha512-4CyanoAudUSBAn5K13H4JhsMH6L9ZP7XbLVe/dKybkxMO7eDyLsT8UHl9TRNrU2Gr9nz+FovfSIjuXWJ81uVwQ==}
@@ -5390,6 +5396,8 @@ snapshots:
       tapable: 2.2.1
 
   environment@1.1.0: {}
+
+  es-toolkit@1.41.0: {}
 
   esast-util-from-estree@2.0.0:
     dependencies:
