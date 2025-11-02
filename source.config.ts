@@ -1,7 +1,6 @@
 import { defineDocs, frontmatterSchema, defineConfig } from 'fumadocs-mdx/config'
 import { z } from 'zod'
 import remarkGfm from 'remark-gfm'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { rehypeLinkNewWindow } from './lib/rehype'
 
 // Define blog collection
@@ -34,16 +33,16 @@ export default defineConfig({
     remarkPlugins: [remarkGfm],
     rehypePlugins: v => [
       ...v,
-      [
-        rehypeAutolinkHeadings,
-        {
-          properties: { className: ['header-anchor'], ariaHidden: true, tabIndex: -1 },
-          content: {
-            type: 'text',
-            value: '#',
-          },
-        },
-      ],
+      // [
+      //   rehypeAutolinkHeadings,
+      //   {
+      //     properties: { className: ['header-anchor'], ariaHidden: true, tabIndex: -1 },
+      //     content: {
+      //       type: 'text',
+      //       value: '#',
+      //     },
+      //   },
+      // ],
       rehypeLinkNewWindow,
     ],
     rehypeCodeOptions: {

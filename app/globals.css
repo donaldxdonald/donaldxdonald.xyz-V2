@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import '../assets/styles/md.css';
-@import '../assets/styles/cmdk-tokens.css';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
 
 @config '../tailwind.config.ts';
 

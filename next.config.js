@@ -4,10 +4,13 @@ import { createMDX } from 'fumadocs-mdx/next'
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [
-      'cdn.donaldxdonald.xyz',
-      'i.scdn.co',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.donaldxdonald.xyz',
+      },
     ],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 
   async redirects() {
