@@ -25,7 +25,7 @@ export default async function Post({ page }: {
         {format(data.date, 'yyyy-MM-dd HH:mm')}
         {' '}
         | (
-        <Link className="hover:underline" target="__blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">license</Link>
+        <Link prefetch={false} className="hover:underline" target="__blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">license</Link>
         )
       </span>
       <article className="prose prose-slate max-w-3xl font-display mt-5">

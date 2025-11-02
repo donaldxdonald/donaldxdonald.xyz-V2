@@ -33,6 +33,7 @@ export default function PostList({ list }: { list: (BlogPost | WeeklyPost)[] }) 
                       <Link
                         href={post.url}
                         className="px-2 md:px-5 tracking-tight py-3 flex justify-between text-sm md:text-lg w-full rounded-md text-slate-600 hover:text-purple-800 hover:bg-purple-100"
+                        prefetch={false}
                       >
                         <span className="flex-1 max-w-[80%] truncate">{ post.data.title }</span>
                         <span className="text-xs md:text-sm text-gray-400 font-mono">{ format(post.data.date, 'yyyy-MM-dd') }</span>
