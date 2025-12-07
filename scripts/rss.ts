@@ -32,15 +32,15 @@ async function parseMd(mdPath: string) {
     }))
 }
 
-const DOMAIN = 'https://donaldxdonald.xyz'
+const DOMAIN = 'https://dndxdnd.com/'
 
 const AUTHOR: Author = {
   name: 'Donald Mok',
-  email: 'mzhlovefama@hotmail.com',
-  link: 'https://donaldxdonald.xyz/',
+  email: 'donaldxdonald@duck.com',
+  link: 'https://dndxdnd.com/',
 }
 
-const COPY_RIGHT = 'CC BY-NC-SA 4.0 2023 © Donald Mok'
+const COPY_RIGHT = 'CC BY-NC-SA 4.0 2025 © Donald Mok'
 
 const contentCrawler = new fdir({
   includeBasePath: true,
@@ -51,8 +51,8 @@ async function buildBlogRSS() {
   const options: FeedOptions = {
     copyright: COPY_RIGHT,
     title: 'Donald x Blog',
-    id: 'https://donaldxdonald.xyz/blog',
-    link: 'https://donaldxdonald.xyz/blog',
+    id: 'https://dndxdnd.com/blog',
+    link: 'https://dndxdnd.com/blog',
     description: 'It\'s all about Donald Mok\'s Blog',
   }
 
@@ -84,10 +84,10 @@ async function buildWeeklyRSS() {
 
   const options: FeedOptions = {
     copyright: COPY_RIGHT,
-    title: 'Donald x Weekly',
-    id: 'https://donaldxdonald.xyz/weekly',
-    link: 'https://donaldxdonald.xyz/weekly',
-    description: 'What a Donald Mok\'s week!',
+    title: 'Navi News',
+    id: 'https://dndxdnd.com/weekly',
+    link: 'https://dndxdnd.com/weekly',
+    description: 'About Web Tech & AI, Weekly',
   }
 
   const posts: Item[] = (await Promise.all(
@@ -115,9 +115,9 @@ async function buildWeeklyRSS() {
 async function writeFeed(name: string, items: Item[], options: FeedOptions) {
   options.author = AUTHOR
   options.feedLinks = {
-    json: `https://donaldxdonald.xyz/${name}.json`,
-    atom: `https://donaldxdonald.xyz/${name}.atom`,
-    rss: `https://donaldxdonald.xyz/${name}.xml`,
+    json: `https://dndxdnd.com/${name}.json`,
+    atom: `https://dndxdnd.com/${name}.atom`,
+    rss: `https://dndxdnd.com/${name}.xml`,
   }
 
   const feed = new Feed(options)
