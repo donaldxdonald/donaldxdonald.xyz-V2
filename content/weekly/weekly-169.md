@@ -1,6 +1,6 @@
 ---
 title: '#169: GLM 4.6V, GPT 5.2, Agentic AI Foundation…'
-date: 20025-12-15 00:19
+date: 2025-12-15 00:19
 ---
 
 
